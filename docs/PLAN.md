@@ -4,7 +4,7 @@
 
 ## 范围和依据
 
-主项目：`C:\Users\User\Desktop\test\my_splender\splendor-main`。只读参考：`C:\Users\User\Desktop\test\my_splender\PyGem-main`。以主项目本地源码、`package.json` 和 `package-lock.json` 为准。目标是双人同机可玩、接入参考图片素材、完成简体中文界面。
+当前主项目：`C:\Users\User\Desktop\test\my_splender\splendor-zh`。原只读参考路径 `C:\Users\User\Desktop\test\my_splender\PyGem-main` 仅作历史记录。以主项目本地源码、`package.json` 和 `package-lock.json` 为准。目标是双人同机可玩、接入参考图片素材、完成简体中文界面。
 
 ## 阶段 0：审计和运行基线（已完成）
 

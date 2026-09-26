@@ -1,5 +1,13 @@
 # 项目状态
 
+## 本地项目目录更名（2026-09-26）
+
+按用户要求，将本地项目文件夹从 `C:\Users\User\Desktop\test\my_splender\splendor-main` 更名为 `C:\Users\User\Desktop\test\my_splender\splendor-zh`；Git 分支继续为 `main`，原有提交历史保留。同步更新 `AGENTS.md` 与 `docs/PLAN.md` 中表示当前项目位置的路径；旧阶段记录与素材清单中的 `splendor-main` 仍为历史来源说明，未修改其哈希或业务数据。原有 5173 本地开发服务在移动前退出，尚未从新路径重新启动。
+
+实际检查：旧目录不存在，新目录存在；Git `main` 分支和既有提交可读取；在新目录运行 `npm run assets:check` 通过（51 个素材文件、90 张卡、10 位贵族、6 类宝石、3 种牌背），`npm run build` 通过。本次未运行完整测试，也未验证 GitHub Desktop 对新路径的识别或远程推送。
+
+---
+
 ## GitHub 发布准备（2026-09-26）
 
 用户确认原项目代码与素材均已获发布授权，并指定公开仓库名 `splendor-zh`。已在 `splendor-main` 初始化 `main` 分支 Git 仓库，并生成首个本地提交 `6050954`；为发布补充 `.gitignore` 的环境文件、日志及系统文件忽略项，并在 `ASSETS.md` 顶部记录最新授权确认。初步文件名及常见密钥格式扫描未发现需排除的凭据；首个提交包含 178 个文件，未包含 `node_modules/`、`dist/`、`dist-server/`、环境文件或可执行归档。
