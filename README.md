@@ -1,4 +1,4 @@
-# Splendor 双人本地版
+# Splendor （璀璨宝石/宝石商人） 中文双人本地版
 
 基于 [TanmayKhot/splendor](https://github.com/TanmayKhot/splendor) 改造的简体中文浏览器游戏。两名玩家在同一台电脑上轮流操作，无需登录或连接游戏服务器。
 
