@@ -39,7 +39,7 @@ describe('complete game art mapping and shared surfaces', () => {
     }
     expect(container.querySelector(`.player-noble img[src="${nobleArt[noble.id]}"]`)).toBeTruthy();
     expect(container.querySelector(`.noble-choice img[src="${nobleArt[noble.id]}"]`)).toBeTruthy();
-    expect(container.querySelector('.card-slot .card:has(img[src="/pygem/images/blue1-1.png"]) .btn-buy')?.hasAttribute('disabled')).toBe(true);
+    expect(container.querySelector('.card-slot .card:has(img[src="/pygem/images/blue1-1.webp"]) .btn-buy')?.hasAttribute('disabled')).toBe(true);
     expect(container.querySelector('.deck-button')?.hasAttribute('disabled')).toBe(true);
   });
 

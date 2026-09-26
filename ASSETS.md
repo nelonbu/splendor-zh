@@ -6,7 +6,11 @@
 
 ## 当前独立项目状态（2026-09-26）
 
-正式游戏只读取项目内的 `public/pygem/` 与 `public/custom-nobles/` 图片，映射位于 `src/components/gameArt.generated.ts`。原阶段 1 清单已保存为 `assets/pygem-manifest.json`，其中的 `../PyGem-main` 是历史来源记录，不是运行或校验依赖。`npm run assets:check` 现在直接校验正式图片的 SHA-256、路径大小写及映射覆盖；`npm run assets:preview` 和 `npm run assets:sample` 也只读取项目内文件。相邻参考目录与 `dev-assets/pygem/` 导入副本已移除。下文保留原审计过程记录，其旧命令和路径仅代表当时的状态。图片用于本地运行的授权记录不等于公开发布授权。
+正式游戏只读取项目内的 `public/pygem/` 与 `public/custom-nobles/` 图片，映射位于 `src/components/gameArt.generated.ts`。原阶段 1 清单已保存为 `assets/pygem-manifest.json`，其中的 `../PyGem-main` 是历史来源记录，不是运行或校验依赖。`npm run assets:check` 现在直接校验正式图片的 SHA-256、路径大小写及映射覆盖；`npm run assets:preview` 和 `npm run assets:sample` 也只读取项目内文件。相邻参考目录与 `dev-assets/pygem/` 导入副本已移除。下文保留原审计过程记录，其旧命令和路径仅代表当时的状态。
+
+## WebP 正式素材（2026-09-26）
+
+用户提供的 43 张 PyGem 背景和 2 张自备贵族图片已采用无 `_结果` 后缀的 WebP 文件名。原 PNG 与不再使用的 `public/sample-art/` 副本已删除；项目原有的小型 `public/cards.png`、`public/gems.png` 和 README 截图 `demo.png` 不属于本次转换范围。45 张正式 WebP 共约 3.68 MiB，对应 PNG 原图约 60.10 MiB。清单中每个转换条目保存当前 WebP 路径、大小、SHA-256，以及旧 PNG 的 `original` 来源记录。`npm run assets:sample` 现在核对代表素材，不再制作重复副本。宝石 SVG 保持原格式。正式映射仍只作展示，不影响规则数字或 ID。
 
 
 参考目录：`../PyGem-main`，只读。阶段 1 将素材副本导入 `dev-assets/pygem/`；阶段 3 已把固定映射接入所有相关游戏界面。主项目原有 `public/cards.png` 和 `public/gems.png` 仍仅用于规则说明弹窗。
@@ -15,7 +19,7 @@
 
 `npm run assets:game` 从阶段 1 审计清单读取固定路径，校验源 SHA-256 后，将 49 个 PyGem 图片/图标副本复制到 `public/pygem/`，并将 `N-06.PNG`、`N-07.PNG` 两张用户补图复制到 `public/custom-nobles/`；字体不属于本阶段。脚本生成 `src/components/gameArt.generated.ts`，明确列出主项目 90 张卡、10 位贵族、3 种牌背、6 种宝石到图片路径的映射。已有文件内容不同会报错，不会静默覆盖。`npm run assets:game:check` 逐文件验证哈希与路径大小写、生成文件一致性和映射覆盖。
 
-覆盖结果：发展卡 **14 精确匹配、76 固定装饰分配、0 待处理**；贵族 **8 精确匹配、2 用户补图、0 待处理**；宝石 6/6、牌背 3/3。图片只作展示背景，分数、加成、费用及贵族要求继续由主项目数据绘制。固定装饰分配不表示参考游戏的数值相同。失败图片会从 DOM 移除，保留底色与数字文字。从牌背盲预留时，飞行层只显示对应等级的牌背，牌正面不会在动画中提前出现。`public/sample-art/` 的四个阶段 2 文件仍保留，但当前映射已指向上述完整目录。
+覆盖结果：发展卡 **14 精确匹配、76 固定装饰分配、0 待处理**；贵族 **8 精确匹配、2 用户补图、0 待处理**；宝石 6/6、牌背 3/3。图片只作展示背景，分数、加成、费用及贵族要求继续由主项目数据绘制。固定装饰分配不表示参考游戏的数值相同。失败图片会从 DOM 移除，保留底色与数字文字。从牌背盲预留时，飞行层只显示对应等级的牌背，牌正面不会在动画中提前出现。阶段 2 曾保留 `public/sample-art/` 副本，现已删除。
 
 本阶段在 `dist/` 逐一核对了映射实际引用的 **47 个不同 URL**：构建文件均存在且哈希与 `public/` 相同，Vite 生产预览返回 HTTP 200 与正确的 PNG/SVG MIME。51 个导入文件多于 47 个 URL，是因为多个主项目对象共用装饰背景，另有少数已导入背景当前未被映射引用。素材仅获用户授权用于本地运行，公开发布仍须另核使用权。
 
@@ -25,7 +29,7 @@
 
 通过 `npm run dev:local -- --host 127.0.0.1` 启动后打开 `/tools/playable-sample.html`，可在确定性夹具中直接购买蓝卡或预留白卡。该 HTML 仅供 Vite 开发预览，不在生产构建中，正式初始资源保持原状。用户已确认素材仅用于本地运行交付；公开发布授权仍未核验。
 
-## 自备贵族补图（最新）
+## 自备贵族补图（历史记录）
 
 用户已在 `assets/user-nobles/` 放入 `N-06.PNG` 和 `N-07.PNG`。两张源图保持原名、原尺寸和原字节，未复制到 PyGem 目录；阶段 2 另将 `N-06.PNG` 的校验副本放入正式构建：
 

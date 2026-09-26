@@ -39,6 +39,11 @@ for (const file of relativeFiles) {
   if (hash(targetPath) !== file.sha256) throw new Error(`Game art hash differs: ${file.target}`);
 }
 
+for (const directory of ['public/pygem/images', 'public/custom-nobles']) {
+  const legacyFiles = readdirSync(join(root, directory)).filter(name => /\.png$/i.test(name));
+  if (legacyFiles.length) throw new Error(`Uncompressed game art remains in ${directory}: ${legacyFiles.join(', ')}`);
+}
+
 const cardArt = Object.fromEntries(manifest.cards.map(({ id, image }) => [id, image]));
 const nobleArt = Object.fromEntries(manifest.nobles.map(({ id, image }) => [id, image]));
 const deckArt = Object.fromEntries(manifest.decks.map(({ tier, image }) => [tier, image]));

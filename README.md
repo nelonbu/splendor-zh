@@ -2,6 +2,8 @@
 
 基于 [TanmayKhot/splendor](https://github.com/TanmayKhot/splendor) 改造的简体中文浏览器游戏。两名玩家在同一台电脑上轮流操作，无需登录或连接游戏服务器。
 
+🎮 **[打开网页版，直接开始游戏](https://nelonbu.github.io/splendor-zh/)**
+
 ![双人本地对局界面](demo.png)
 
 ## 功能
@@ -13,7 +15,7 @@
 - 卡牌和宝石的移动动画
 - 可开关的循环背景音乐
 
-## 运行要求
+## 本地运行要求
 
 - Node.js 20.19+ 或 22.12+
 - npm
@@ -41,9 +43,9 @@ npm run build
 
 构建结果位于 `dist/`。素材预览可通过 `npm run assets:preview` 启动。
 
-## GitHub Pages 网页版
+## 网页版部署
 
-本仓库的 `.github/workflows/pages.yml` 会在推送到 `main` 后运行素材检查、测试和网页构建，再发布双人同机版本。首次使用时，在 GitHub 仓库 **Settings → Pages → Build and deployment → Source** 选择 **GitHub Actions**。通过 GitHub Desktop 将本地改动推送后，在 **Actions** 中查看 `Deploy GitHub Pages` 的结果；成功后访问 `https://nelonbu.github.io/splendor-zh/`。
+本仓库已通过 GitHub Pages 发布。推送到 `main` 后，`.github/workflows/pages.yml` 会运行素材检查、测试和网页构建，再更新网页版；部署结果可在仓库 **Actions** 的 `Deploy GitHub Pages` 中查看。
 
 Pages 构建使用 `/splendor-zh/` 路径；普通 `npm run build` 和 Windows 双击启动入口仍使用本地根路径。网页允许两人在同一设备上轮流玩，不提供跨设备同步。
 

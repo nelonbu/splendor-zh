@@ -33,7 +33,7 @@
 <body>
   <h1>PyGem 素材映射预览</h1>
   <p>开发用页面；只展示原始素材与映射结果，不参与正式游戏逻辑。图片本身与下方独立列出的费用、分数分开显示，便于检查图中是否已印有数值或文字。</p>
-  <p class="warning">PyGem 素材仅按用户确认用于本地运行。自备贵族图片只补足展示映射，不会改变主项目的贵族要求。</p>
+  <p class="warning">本页仅用于检查素材与展示映射。自备贵族图片只补足画面，不会改变主项目的贵族要求。</p>
   <div id="summary" class="summary"></div>
   <div class="controls">
     <label>类别 <select id="view"><option value="cards">发展卡映射</option><option value="nobles">贵族映射</option><option value="raw">原始素材</option></select></label>
@@ -124,7 +124,7 @@
             element = tile(item.id, item.image, [item.status, `分数 ${item.target.points}`, `要求 ${cost(item.target.requirement)}`, item.image || item.note], item.status);
           } else {
             const imagePath = item.path.toLowerCase();
-            const isImage = imagePath.endsWith('.png') || imagePath.endsWith('.svg');
+            const isImage = imagePath.endsWith('.webp') || imagePath.endsWith('.svg');
             element = tile(item.path, isImage ? item.url : null, [item.kind, `${item.bytes.toLocaleString()} bytes`, item.width ? `${item.width} × ${item.height}` : '', `SHA-256 ${item.sha256.slice(0, 16)}…`]);
           }
           results.append(element);

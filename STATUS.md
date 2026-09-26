@@ -1,12 +1,44 @@
 # 项目状态
 
+## 正式素材改用 WebP 并移除 PNG 原图（2026-09-26）
+
+按用户要求将 45 张正式背景素材的 `_结果.webp` 文件规范为同名 `.webp`，更新清单和 90 张发展卡、10 位贵族、3 种牌背的展示映射；6 个宝石 SVG 不变。删除对应 45 张 `public/` PNG、`assets/user-nobles/` 的两张旧 PNG 源图，以及不再使用的 `public/sample-art/` 四个重复样板文件。清单为每张 WebP 记录新的大小与 SHA-256，并在 `original` 字段保留旧 PNG 的路径、大小和哈希。项目原有 `public/cards.png`、`public/gems.png`（合计约 0.03 MiB）及 README 截图 `demo.png` 不属于这批转换，予以保留。未修改规则数据、内部 ID、状态协议或宝石图标。
+
+实际检查：`npm run assets:check`、`npm run assets:sample` 通过；`npm test` 16 个文件、232 项通过；普通和 GitHub Pages 路径的 `npm run build` 均通过。`dist/` 从此前约 69.08 MiB 降至 9.16 MiB，包含 45 张 WebP、6 个 SVG、音乐和应用文件；仅余 `cards.png`、`gems.png` 两张旧项目小图。41 个不同的牌面/贵族/牌背映射 URL 均有对应构建文件。Pages 路径预览中首页、发展卡、牌背、贵族、宝石 SVG 和 MP3 均返回 200 且 MIME 正确；真实浏览器进入双人对局后，当前 76 个图片元素中 18 个 WebP、58 个 SVG 均无加载失败。开发素材预览页、清单和代表 WebP 的 HTTP HEAD 也均返回 200。临时服务已停止。
+
+尚未验证：45 张 WebP 的逐张人工画质检查、线上 Pages 更新后的实际速度、其他浏览器和手机端完整对局。此次仅做本地素材与展示改动，未推送远程。
+
+---
+
+## 用户转换的 WebP 素材审计（2026-09-26）
+
+用户在 `public/pygem/images/` 和 `public/custom-nobles/` 原目录新增 45 张带 `_结果.webp` 后缀的图片。按去掉 `_结果` 并保持原文件名比较，45 张均能与 PNG 原图一一对应；WebP 的 RIFF/WEBP 标记有效，读取到的尺寸全部与对应 PNG 相同（22 张 960×1200、11 张 816×1456、10 张 1024×1024，另有 849×849 和 900×900 各一张）。对应原图合计约 60.10 MiB，WebP 合计约 3.68 MiB，文件体积减少约 93.9%。目视抽查 `green1-2` 与 `N-06` 的原图和转换图，未见明显破损。
+
+当前 `gameArt.generated.ts` 仍映射 PNG；本次未接入 WebP、未改动原图或新增图片，也未运行测试或构建。由于两套图片同在 `public/`，若直接构建会同时复制到 `dist`，现阶段不会改善游戏加载。尚未逐张检查全部 45 张 WebP 的画质或在真实游戏界面验证。
+
+---
+
+## GitHub Pages 上线与文档入口（2026-09-26）
+
+用户确认网页版已可访问。只读请求 `https://nelonbu.github.io/splendor-zh/` 返回 HTTP 200，页面标题为“璀璨宝石”。已将网页版入口移至 `README.md` 开头，并将部署说明更新为已上线状态。此次仅修改 `README.md` 和 `STATUS.md`；未运行本地测试或构建，也未提交或推送。
+
+尚未验证：线上页面中的完整双人对局、所有素材与音乐加载、其他浏览器及手机排版。
+
+---
+
+## GitHub Pages 首次发布排障（2026-09-26）
+
+用户提供的首次发布截图及具体错误显示：远程运行 `36234036733` 的 `npm ci`、素材检查、测试和前端构建均成功，`actions/configure-pages@v5` 在读取 Pages 站点时收到 `Get Pages site failed / 404 Not Found`，后续上传和部署未运行。当时只读查询该仓库的 Pages API 也返回 404；建议仓库管理员在 Settings → Pages → Build and deployment → Source 选择 GitHub Actions，然后重新运行失败工作流。依据 GitHub 官方 Pages 发布来源说明，本次没有证据表明业务代码或构建产物存在问题；当次未修改业务代码、工作流或远程设置，也未运行本地测试或构建。后续上线结果见上文。
+
+---
+
 ## GitHub Pages 发布准备（2026-09-26）
 
 按当前 `nelonbu/splendor-zh` 仓库路径添加 GitHub Pages 工作流：推送 `main` 后执行 `npm ci`、素材检查、测试和前端构建，再上传 `dist`。Pages 构建使用 `/splendor-zh/`，普通本地构建仍使用 `/`；展示组件依照构建路径加载卡牌、贵族与宝石图标。BGM 继续通过 Vite 导入。没有修改规则数据或联机逻辑，也未推送远程。
 
 实际检查：`npm run assets:check` 通过（51 个素材文件、90 张发展卡、10 位贵族、6 种宝石、3 种牌背）；`npm test` 16 个文件、232 项通过；普通 `npm run build` 和设置 `GITHUB_PAGES=true` 的 Pages 构建均通过。以 Pages 路径启动 `vite preview` 后，首页、JS、CSS、MP3、发展卡 PNG、宝石 SVG、自备贵族 PNG 的 HTTP HEAD 请求均返回 200，资源类型正确。在真实浏览器通过 `/splendor-zh/` 进入双人对局，83 张当前图片无加载失败；音乐点击后 `paused=false`、`readyState=4`。临时预览服务已停止。
 
-尚未验证：GitHub Actions 在远程运行、Pages 实际上线后的访问、其他浏览器及手机布局。需要用户通过 GitHub Desktop 推送本地改动，并在仓库 Settings → Pages 选择 GitHub Actions；本次未代用户推送或更改远程仓库设置。
+当次尚未验证 GitHub Actions 在远程运行、Pages 实际上线后的访问、其他浏览器及手机布局；当时仍需用户推送并启用 Pages。本次未代用户推送或更改远程仓库设置；后续上线结果见顶部记录。
 
 ---
 

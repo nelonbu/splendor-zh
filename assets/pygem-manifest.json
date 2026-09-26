@@ -91,377 +91,604 @@
       "hasTextElement": false
     },
     {
-      "path": "images/blue-noble-1.png",
+      "path": "images/blue-noble-1.webp",
       "kind": "noble-background",
-      "bytes": 2165511,
-      "sha256": "cccfc5db718318f3fcb8565661c078eb635df5cc5fc13c2a1eb8548dc78ba222",
+      "bytes": 247482,
+      "sha256": "29c3daf78b4d5f069687f539f78cb15c46c12d5ecae9049cd237a58425309777",
       "width": 1024,
-      "height": 1024
+      "height": 1024,
+      "original": {
+        "path": "images/blue-noble-1.png",
+        "bytes": 2165511,
+        "sha256": "cccfc5db718318f3fcb8565661c078eb635df5cc5fc13c2a1eb8548dc78ba222"
+      }
     },
     {
-      "path": "images/blue-noble-2.png",
+      "path": "images/blue-noble-2.webp",
       "kind": "noble-background",
-      "bytes": 1315819,
-      "sha256": "9246e456c054fef0cba8e3e9c5b0cd0f66daa1e83ffdcf5756a731adcaf4ef6a",
+      "bytes": 94810,
+      "sha256": "bf74d817b6dedd4e57b3163c7d7b3f5a9a44f216023baea487dc9cd783afaf31",
       "width": 1024,
-      "height": 1024
+      "height": 1024,
+      "original": {
+        "path": "images/blue-noble-2.png",
+        "bytes": 1315819,
+        "sha256": "9246e456c054fef0cba8e3e9c5b0cd0f66daa1e83ffdcf5756a731adcaf4ef6a"
+      }
     },
     {
-      "path": "images/blue1-1.png",
+      "path": "images/blue1-1.webp",
       "kind": "card-background",
-      "bytes": 1441835,
-      "sha256": "fe8b50415d11293424319b453c0e246da9f04bd12396c661c5d3c6acb4292828",
+      "bytes": 83968,
+      "sha256": "22ce675380e65b3b0a7b21040c55492b4b7877bb407f060d1b498aa4b278a56c",
       "width": 816,
-      "height": 1456
+      "height": 1456,
+      "original": {
+        "path": "images/blue1-1.png",
+        "bytes": 1441835,
+        "sha256": "fe8b50415d11293424319b453c0e246da9f04bd12396c661c5d3c6acb4292828"
+      }
     },
     {
-      "path": "images/blue1-2.png",
+      "path": "images/blue1-2.webp",
       "kind": "card-background",
-      "bytes": 1532733,
-      "sha256": "b8413a776acd3f8a26417684419920b9606b0801c2ddbc7298cc7d92aaf02cd5",
+      "bytes": 108670,
+      "sha256": "17e6a0497c02652447ebba57275f54fa9ece116690ee7a746847f3cf1a0f625e",
       "width": 816,
-      "height": 1456
+      "height": 1456,
+      "original": {
+        "path": "images/blue1-2.png",
+        "bytes": 1532733,
+        "sha256": "b8413a776acd3f8a26417684419920b9606b0801c2ddbc7298cc7d92aaf02cd5"
+      }
     },
     {
-      "path": "images/blue2-1.png",
+      "path": "images/blue2-1.webp",
       "kind": "card-background",
-      "bytes": 1290542,
-      "sha256": "07057c7cd59db067bcdb42864f4d36a6387f6873acb91256a322dffd94170da8",
+      "bytes": 76942,
+      "sha256": "b247d62f3a659fa0ae090596678fc7f50b5b300971a92c16479d59e94d4cd3a4",
       "width": 960,
-      "height": 1200
+      "height": 1200,
+      "original": {
+        "path": "images/blue2-1.png",
+        "bytes": 1290542,
+        "sha256": "07057c7cd59db067bcdb42864f4d36a6387f6873acb91256a322dffd94170da8"
+      }
     },
     {
-      "path": "images/blue2-2.png",
+      "path": "images/blue2-2.webp",
       "kind": "card-background",
-      "bytes": 1405854,
-      "sha256": "7c4c19fb0f7c72ded00a2f7b9cc157037d962db0136628d823ed9c4a5de60ca2",
+      "bytes": 71928,
+      "sha256": "7c443fe136d6b4bb309279c7cf0829a9b17afda2dbe8bf49e985f7e3e0028b42",
       "width": 816,
-      "height": 1456
+      "height": 1456,
+      "original": {
+        "path": "images/blue2-2.png",
+        "bytes": 1405854,
+        "sha256": "7c4c19fb0f7c72ded00a2f7b9cc157037d962db0136628d823ed9c4a5de60ca2"
+      }
     },
     {
-      "path": "images/blue3-1.png",
+      "path": "images/blue3-1.webp",
       "kind": "card-background",
-      "bytes": 1450305,
-      "sha256": "f874cccac5945ef93a8655ce29c65fec1611f034be3c90d57fb18498cca2aee3",
+      "bytes": 103854,
+      "sha256": "925995d3f23bbaa0e284802957f1417e2725c3edead672aa9ec36ea5d5f3f834",
       "width": 960,
-      "height": 1200
+      "height": 1200,
+      "original": {
+        "path": "images/blue3-1.png",
+        "bytes": 1450305,
+        "sha256": "f874cccac5945ef93a8655ce29c65fec1611f034be3c90d57fb18498cca2aee3"
+      }
     },
     {
-      "path": "images/blue3-2.png",
+      "path": "images/blue3-2.webp",
       "kind": "card-background",
-      "bytes": 1562715,
-      "sha256": "7fde787ae9569d8104607ce90ac39a1b1cf6702268b30814433a548afa05d81f",
+      "bytes": 100934,
+      "sha256": "5c781e3ea9929e0c2b344e9e1931d343e2eaa518bc76a2825d1a5852cd0aaaeb",
       "width": 960,
-      "height": 1200
+      "height": 1200,
+      "original": {
+        "path": "images/blue3-2.png",
+        "bytes": 1562715,
+        "sha256": "7fde787ae9569d8104607ce90ac39a1b1cf6702268b30814433a548afa05d81f"
+      }
     },
     {
-      "path": "images/green-noble-1.png",
+      "path": "images/green-noble-1.webp",
       "kind": "noble-background",
-      "bytes": 1545102,
-      "sha256": "1884859fdf7c4415d76fca2020174cbaf00a99e2eeb07f4ccaa3f9e5b69389a4",
+      "bytes": 108412,
+      "sha256": "33d8f0ebb454d3ac051eabdf3ee92eef960bf38c6077591ec4689373b3e1e6dc",
       "width": 1024,
-      "height": 1024
+      "height": 1024,
+      "original": {
+        "path": "images/green-noble-1.png",
+        "bytes": 1545102,
+        "sha256": "1884859fdf7c4415d76fca2020174cbaf00a99e2eeb07f4ccaa3f9e5b69389a4"
+      }
     },
     {
-      "path": "images/green-noble-2.png",
+      "path": "images/green-noble-2.webp",
       "kind": "noble-background",
-      "bytes": 1680765,
-      "sha256": "caa250f5dbcaec2968ce6739b99c0e9c5c97259e1344e6f24c359918370e7b54",
+      "bytes": 121152,
+      "sha256": "a1ec54be1de1ceaea8796443be8307ae2327d62e4c51adbca709c277464e60bc",
       "width": 1024,
-      "height": 1024
+      "height": 1024,
+      "original": {
+        "path": "images/green-noble-2.png",
+        "bytes": 1680765,
+        "sha256": "caa250f5dbcaec2968ce6739b99c0e9c5c97259e1344e6f24c359918370e7b54"
+      }
     },
     {
-      "path": "images/green1-1.png",
+      "path": "images/green1-1.webp",
       "kind": "card-background",
-      "bytes": 1657416,
-      "sha256": "eb4ed0b19e100c70eba2891275d6d7e202aa17d4ce985ccf8baf4fb015ab49f5",
+      "bytes": 127622,
+      "sha256": "dddc6ab622e86755fdd9cf5b0af5821ba69b0fb3bf0b07ff4f463ec4485cee56",
       "width": 960,
-      "height": 1200
+      "height": 1200,
+      "original": {
+        "path": "images/green1-1.png",
+        "bytes": 1657416,
+        "sha256": "eb4ed0b19e100c70eba2891275d6d7e202aa17d4ce985ccf8baf4fb015ab49f5"
+      }
     },
     {
-      "path": "images/green1-2.png",
+      "path": "images/green1-2.webp",
       "kind": "card-background",
-      "bytes": 1727075,
-      "sha256": "f182554d7d8fa70e27bd5b75b156744d0e80f30d5b66f563aa61f3ead4cc33f7",
+      "bytes": 138862,
+      "sha256": "77ec57268d8da08390c88c01cbd498af3ce84eb5799008abf2e52d25b707ab14",
       "width": 960,
-      "height": 1200
+      "height": 1200,
+      "original": {
+        "path": "images/green1-2.png",
+        "bytes": 1727075,
+        "sha256": "f182554d7d8fa70e27bd5b75b156744d0e80f30d5b66f563aa61f3ead4cc33f7"
+      }
     },
     {
-      "path": "images/green2-1.png",
+      "path": "images/green2-1.webp",
       "kind": "card-background",
-      "bytes": 1327666,
-      "sha256": "4139dd1043c6cf3d8f11df0273da49ac89cd2286eac1d154e41b6641d3b86c8e",
+      "bytes": 75898,
+      "sha256": "7ae71a31076980fd66ff9652f17712a444afc5a6be666a506ca31084d279e29f",
       "width": 816,
-      "height": 1456
+      "height": 1456,
+      "original": {
+        "path": "images/green2-1.png",
+        "bytes": 1327666,
+        "sha256": "4139dd1043c6cf3d8f11df0273da49ac89cd2286eac1d154e41b6641d3b86c8e"
+      }
     },
     {
-      "path": "images/green2-2.png",
+      "path": "images/green2-2.webp",
       "kind": "card-background",
-      "bytes": 1468601,
-      "sha256": "09f90562763493205646e223db845515144efced208c80564353282b4e4457d5",
+      "bytes": 80992,
+      "sha256": "f69c7c5626810cd0b6bebad7122ee9c35490494ec0c1e62881b7ba291bf2f9cb",
       "width": 816,
-      "height": 1456
+      "height": 1456,
+      "original": {
+        "path": "images/green2-2.png",
+        "bytes": 1468601,
+        "sha256": "09f90562763493205646e223db845515144efced208c80564353282b4e4457d5"
+      }
     },
     {
-      "path": "images/green3-1.png",
+      "path": "images/green3-1.webp",
       "kind": "card-background",
-      "bytes": 1464960,
-      "sha256": "7bd5904441754a8bcaafb3c36b6010feef4e270f51b0ee7a315e0fa126ccb486",
+      "bytes": 90772,
+      "sha256": "d372b4666bcd4e8e399db6812711650bb4ba023bff4fffaed9affdd33896655a",
       "width": 960,
-      "height": 1200
+      "height": 1200,
+      "original": {
+        "path": "images/green3-1.png",
+        "bytes": 1464960,
+        "sha256": "7bd5904441754a8bcaafb3c36b6010feef4e270f51b0ee7a315e0fa126ccb486"
+      }
     },
     {
-      "path": "images/green3-2.png",
+      "path": "images/green3-2.webp",
       "kind": "card-background",
-      "bytes": 1398710,
-      "sha256": "828ce90d26eedd0fa95b916d5492c5935aa76605bfc2b7e48c027e5d6b42ac8b",
+      "bytes": 90894,
+      "sha256": "c3c94720dc609ebe26c121a1ee454994a7c505a05959576412393339a0f4fc0f",
       "width": 960,
-      "height": 1200
+      "height": 1200,
+      "original": {
+        "path": "images/green3-2.png",
+        "bytes": 1398710,
+        "sha256": "828ce90d26eedd0fa95b916d5492c5935aa76605bfc2b7e48c027e5d6b42ac8b"
+      }
     },
     {
-      "path": "images/level-1-deck.png",
+      "path": "images/level-1-deck.webp",
       "kind": "deck-background",
-      "bytes": 1389377,
-      "sha256": "379e8cdba1c476a93adb013260ce128ea2430daaf9d783d26b25d057715a059a",
+      "bytes": 66806,
+      "sha256": "f1e2deaf50ef2334c477d51862bbb7a33cb15531711dcb5c07a5a80d9f8aaca7",
       "width": 960,
-      "height": 1200
+      "height": 1200,
+      "original": {
+        "path": "images/level-1-deck.png",
+        "bytes": 1389377,
+        "sha256": "379e8cdba1c476a93adb013260ce128ea2430daaf9d783d26b25d057715a059a"
+      }
     },
     {
-      "path": "images/level-2-deck.png",
+      "path": "images/level-2-deck.webp",
       "kind": "deck-background",
-      "bytes": 1487428,
-      "sha256": "a3ed9d7e1e3b4645e7054b4a0e0e7ac2b8808d0e8c6619541b69dbb58b2ace1f",
+      "bytes": 58858,
+      "sha256": "cbf439cfae7f5cc51100f8d77c36f68e0f4a68b9af1ab83e28194335960567b8",
       "width": 960,
-      "height": 1200
+      "height": 1200,
+      "original": {
+        "path": "images/level-2-deck.png",
+        "bytes": 1487428,
+        "sha256": "a3ed9d7e1e3b4645e7054b4a0e0e7ac2b8808d0e8c6619541b69dbb58b2ace1f"
+      }
     },
     {
-      "path": "images/level-3-deck.png",
+      "path": "images/level-3-deck.webp",
       "kind": "deck-background",
-      "bytes": 1534944,
-      "sha256": "78e08bd42c6e4a62acbbe3c3b1921df4c49a3851e4aa7225603e37dedb23e3a7",
+      "bytes": 102646,
+      "sha256": "78e042210777a0fa17dd3393fc187546f7f8f13db0742e1c50e3f72ce3f98108",
       "width": 960,
-      "height": 1200
+      "height": 1200,
+      "original": {
+        "path": "images/level-3-deck.png",
+        "bytes": 1534944,
+        "sha256": "78e08bd42c6e4a62acbbe3c3b1921df4c49a3851e4aa7225603e37dedb23e3a7"
+      }
     },
     {
-      "path": "images/noir-noble-1.png",
+      "path": "images/noir-noble-1.webp",
       "kind": "noble-background",
-      "bytes": 1330457,
-      "sha256": "f0dc3942a1617c308e87a1fdf238205983f5aaadbc7fd5a01425c0daa73d76b0",
+      "bytes": 52660,
+      "sha256": "6b7a60a6d75b01184f1792892fb3e10b0470c61281806276c1fc8c181e1504dd",
       "width": 1024,
-      "height": 1024
+      "height": 1024,
+      "original": {
+        "path": "images/noir-noble-1.png",
+        "bytes": 1330457,
+        "sha256": "f0dc3942a1617c308e87a1fdf238205983f5aaadbc7fd5a01425c0daa73d76b0"
+      }
     },
     {
-      "path": "images/noir-noble-2.png",
+      "path": "images/noir-noble-2.webp",
       "kind": "noble-background",
-      "bytes": 864129,
-      "sha256": "3ee6c8ef1c9feeeee72079e5b1f36c53954ff583888391c17c727c8a61f85314",
+      "bytes": 27934,
+      "sha256": "fa8e86c28fb554c0b300478b864b3ffa3b3f4a414edf698a2f78ea2266685553",
       "width": 1024,
-      "height": 1024
+      "height": 1024,
+      "original": {
+        "path": "images/noir-noble-2.png",
+        "bytes": 864129,
+        "sha256": "3ee6c8ef1c9feeeee72079e5b1f36c53954ff583888391c17c727c8a61f85314"
+      }
     },
     {
-      "path": "images/noir1-1.png",
+      "path": "images/noir1-1.webp",
       "kind": "card-background",
-      "bytes": 1316248,
-      "sha256": "1806007746268f2ebd86f018c922724b9b2f709a1642e60e848ef20688e75c6e",
+      "bytes": 70606,
+      "sha256": "47869a5b3c9bb025335c49012a8919d3c2c196d2a23bb79f9b6cf7c377a16823",
       "width": 816,
-      "height": 1456
+      "height": 1456,
+      "original": {
+        "path": "images/noir1-1.png",
+        "bytes": 1316248,
+        "sha256": "1806007746268f2ebd86f018c922724b9b2f709a1642e60e848ef20688e75c6e"
+      }
     },
     {
-      "path": "images/noir1-2.png",
+      "path": "images/noir1-2.webp",
       "kind": "card-background",
-      "bytes": 1420366,
-      "sha256": "46fa8578b28c37e04fa0cf286e1908f7b032aca33cf05a2345e2fa6171787702",
+      "bytes": 74532,
+      "sha256": "ac8c7f4e3c58398a25e1b07fe220300085cbfd23324956eb354d13f519d44e59",
       "width": 816,
-      "height": 1456
+      "height": 1456,
+      "original": {
+        "path": "images/noir1-2.png",
+        "bytes": 1420366,
+        "sha256": "46fa8578b28c37e04fa0cf286e1908f7b032aca33cf05a2345e2fa6171787702"
+      }
     },
     {
-      "path": "images/noir2-1.png",
+      "path": "images/noir2-1.webp",
       "kind": "card-background",
-      "bytes": 1281351,
-      "sha256": "2cd3e7371abe87063601fbaccce56c552c3d0458743b366f2d19c018e8cadcce",
+      "bytes": 70616,
+      "sha256": "b391d0339ef79bbd96ed95f689fa7fd9222088287446817f876d3dd2cdd48532",
       "width": 960,
-      "height": 1200
+      "height": 1200,
+      "original": {
+        "path": "images/noir2-1.png",
+        "bytes": 1281351,
+        "sha256": "2cd3e7371abe87063601fbaccce56c552c3d0458743b366f2d19c018e8cadcce"
+      }
     },
     {
-      "path": "images/noir2-2.png",
+      "path": "images/noir2-2.webp",
       "kind": "card-background",
-      "bytes": 1518183,
-      "sha256": "5ca9586b2f878a95bd3ffd8c4960727cc5a625a9de2d9388b46906b27c609d72",
+      "bytes": 77430,
+      "sha256": "01625f240778bc3ccdff78d72909c4a761be40ce07f2a9dac27c83c10882ed9c",
       "width": 816,
-      "height": 1456
+      "height": 1456,
+      "original": {
+        "path": "images/noir2-2.png",
+        "bytes": 1518183,
+        "sha256": "5ca9586b2f878a95bd3ffd8c4960727cc5a625a9de2d9388b46906b27c609d72"
+      }
     },
     {
-      "path": "images/noir3-1.png",
+      "path": "images/noir3-1.webp",
       "kind": "card-background",
-      "bytes": 1455533,
-      "sha256": "3677498856df15de52e7442503d448e93fe3b8e1c5e36108d7129617bdd6b836",
+      "bytes": 99036,
+      "sha256": "3f2b5bccd44ecf36c404873f3fa82a494154634f0b6e79f003db147ba3413300",
       "width": 960,
-      "height": 1200
+      "height": 1200,
+      "original": {
+        "path": "images/noir3-1.png",
+        "bytes": 1455533,
+        "sha256": "3677498856df15de52e7442503d448e93fe3b8e1c5e36108d7129617bdd6b836"
+      }
     },
     {
-      "path": "images/noir3-2.png",
+      "path": "images/noir3-2.webp",
       "kind": "card-background",
-      "bytes": 1319212,
-      "sha256": "35bac207339292cd8fc23cd2791c4d6af5f4909c5a13c327656d155ac7df639a",
+      "bytes": 70514,
+      "sha256": "d6a068879f371cd0313f2e31fa91e3f9470d4d8304cc4282314fedc452da5f62",
       "width": 960,
-      "height": 1200
+      "height": 1200,
+      "original": {
+        "path": "images/noir3-2.png",
+        "bytes": 1319212,
+        "sha256": "35bac207339292cd8fc23cd2791c4d6af5f4909c5a13c327656d155ac7df639a"
+      }
     },
     {
-      "path": "images/red-noble-1.png",
+      "path": "images/red-noble-1.webp",
       "kind": "noble-background",
-      "bytes": 1242751,
-      "sha256": "2efc5f875983ce666efdb3b83e244429a3ca39e063388f8072ecb97c7c65e8e3",
+      "bytes": 46026,
+      "sha256": "46fc5837de697b4ec94ab255e59a4ed50fe131c6ecf7595dfda29345081dd1f4",
       "width": 1024,
-      "height": 1024
+      "height": 1024,
+      "original": {
+        "path": "images/red-noble-1.png",
+        "bytes": 1242751,
+        "sha256": "2efc5f875983ce666efdb3b83e244429a3ca39e063388f8072ecb97c7c65e8e3"
+      }
     },
     {
-      "path": "images/red-noble-2.png",
+      "path": "images/red-noble-2.webp",
       "kind": "noble-background",
-      "bytes": 1347471,
-      "sha256": "755c73c4c9de0df5fdf70110777b38ef1f29e5801e179562ffe681e0e4fbb144",
+      "bytes": 61542,
+      "sha256": "9b82d15cf338bed018db55ff32c2846169ae21466e0b18fb0401c8f188cc33e8",
       "width": 1024,
-      "height": 1024
+      "height": 1024,
+      "original": {
+        "path": "images/red-noble-2.png",
+        "bytes": 1347471,
+        "sha256": "755c73c4c9de0df5fdf70110777b38ef1f29e5801e179562ffe681e0e4fbb144"
+      }
     },
     {
-      "path": "images/red1-1.png",
+      "path": "images/red1-1.webp",
       "kind": "card-background",
-      "bytes": 1310432,
-      "sha256": "847f21e4ef7be2d6c5baf0070554a2cf35c8db3969e597fdbd0bca879d55b77e",
+      "bytes": 70784,
+      "sha256": "8eb5c1447fc1ca235241adc08107cf1cd354a88c92bb2c930495644d9088f345",
       "width": 960,
-      "height": 1200
+      "height": 1200,
+      "original": {
+        "path": "images/red1-1.png",
+        "bytes": 1310432,
+        "sha256": "847f21e4ef7be2d6c5baf0070554a2cf35c8db3969e597fdbd0bca879d55b77e"
+      }
     },
     {
-      "path": "images/red1-2.png",
+      "path": "images/red1-2.webp",
       "kind": "card-background",
-      "bytes": 1049628,
-      "sha256": "31293d5c94bab783222481f41379702b1a1a60884ea1784be19be0231f0932af",
+      "bytes": 33232,
+      "sha256": "4d0c578d9bdc399a13f304db1241637dc41c7b512c3762e118ab82f8df5d1e55",
       "width": 960,
-      "height": 1200
+      "height": 1200,
+      "original": {
+        "path": "images/red1-2.png",
+        "bytes": 1049628,
+        "sha256": "31293d5c94bab783222481f41379702b1a1a60884ea1784be19be0231f0932af"
+      }
     },
     {
-      "path": "images/red2-1.png",
+      "path": "images/red2-1.webp",
       "kind": "card-background",
-      "bytes": 1439007,
-      "sha256": "c5378f848cbb00f4e63a2669482175165fbf5741da0441db5aa348c000cadc0e",
+      "bytes": 73716,
+      "sha256": "e92c42c7e5abf9b9ff528e02925f6e6c4d4a2b64d359be915214054b88fd84d0",
       "width": 960,
-      "height": 1200
+      "height": 1200,
+      "original": {
+        "path": "images/red2-1.png",
+        "bytes": 1439007,
+        "sha256": "c5378f848cbb00f4e63a2669482175165fbf5741da0441db5aa348c000cadc0e"
+      }
     },
     {
-      "path": "images/red2-2.png",
+      "path": "images/red2-2.webp",
       "kind": "card-background",
-      "bytes": 1273814,
-      "sha256": "420aabc18d12920186a374bc9909bf4e60e9ba7b2d286ebc805b65e539d3f314",
+      "bytes": 55900,
+      "sha256": "bd0fcaa8f0cd9bc30e55e7a63a32638a3e242c81632530b95b90cc6889a57171",
       "width": 960,
-      "height": 1200
+      "height": 1200,
+      "original": {
+        "path": "images/red2-2.png",
+        "bytes": 1273814,
+        "sha256": "420aabc18d12920186a374bc9909bf4e60e9ba7b2d286ebc805b65e539d3f314"
+      }
     },
     {
-      "path": "images/red3-1.png",
+      "path": "images/red3-1.webp",
       "kind": "card-background",
-      "bytes": 1347964,
-      "sha256": "169206fda3419dd9f35090bad700a20748ac0e06a3abae5d3633f97e8e7fee49",
+      "bytes": 69218,
+      "sha256": "ae0a61ff6dfb093d266529e15fd0448f5f6f40468f3ebc6051c172a33972bab0",
       "width": 960,
-      "height": 1200
+      "height": 1200,
+      "original": {
+        "path": "images/red3-1.png",
+        "bytes": 1347964,
+        "sha256": "169206fda3419dd9f35090bad700a20748ac0e06a3abae5d3633f97e8e7fee49"
+      }
     },
     {
-      "path": "images/red3-2.png",
+      "path": "images/red3-2.webp",
       "kind": "card-background",
-      "bytes": 1107843,
-      "sha256": "6ca37e4f15670b2a27c521eb58527bb652e6eac6f52bfa74e65da91a9e5ff0af",
+      "bytes": 31914,
+      "sha256": "26e98006ec35fa82ed549d0373d4c2e717d669391dd6da55b4281532e6b8f9ae",
       "width": 960,
-      "height": 1200
+      "height": 1200,
+      "original": {
+        "path": "images/red3-2.png",
+        "bytes": 1107843,
+        "sha256": "6ca37e4f15670b2a27c521eb58527bb652e6eac6f52bfa74e65da91a9e5ff0af"
+      }
     },
     {
-      "path": "images/white-noble-1.png",
+      "path": "images/white-noble-1.webp",
       "kind": "noble-background",
-      "bytes": 1304101,
-      "sha256": "b35786a0d6bdbbc3f7be6068c4395cfa84282901aef5866f6ef6ad542478dad6",
+      "bytes": 49334,
+      "sha256": "2f5e357a55ba13797305b3aede75357e5ea8fb50cc9bdae9bf086e8af987be47",
       "width": 1024,
-      "height": 1024
+      "height": 1024,
+      "original": {
+        "path": "images/white-noble-1.png",
+        "bytes": 1304101,
+        "sha256": "b35786a0d6bdbbc3f7be6068c4395cfa84282901aef5866f6ef6ad542478dad6"
+      }
     },
     {
-      "path": "images/white-noble-2.png",
+      "path": "images/white-noble-2.webp",
       "kind": "noble-background",
-      "bytes": 1541583,
-      "sha256": "8d6583e0f10ddd9e9223b319447a49c78293e5cf6f9d2055a16c828eabec4c29",
+      "bytes": 117134,
+      "sha256": "208a583a45076ccd301267338f7581099cc13950cb9041c54a0c943047d61c44",
       "width": 1024,
-      "height": 1024
+      "height": 1024,
+      "original": {
+        "path": "images/white-noble-2.png",
+        "bytes": 1541583,
+        "sha256": "8d6583e0f10ddd9e9223b319447a49c78293e5cf6f9d2055a16c828eabec4c29"
+      }
     },
     {
-      "path": "images/white1-1.png",
+      "path": "images/white1-1.webp",
       "kind": "card-background",
-      "bytes": 1601110,
-      "sha256": "e8e57340a16aada9ea853054faba530569a9e29a8e9fd738928f6c80978362b8",
+      "bytes": 126576,
+      "sha256": "65251f43f0c340b8fa134846b1f4b0d1a5c293b2963e50fa53620cf53db28dd6",
       "width": 816,
-      "height": 1456
+      "height": 1456,
+      "original": {
+        "path": "images/white1-1.png",
+        "bytes": 1601110,
+        "sha256": "e8e57340a16aada9ea853054faba530569a9e29a8e9fd738928f6c80978362b8"
+      }
     },
     {
-      "path": "images/white1-2.png",
+      "path": "images/white1-2.webp",
       "kind": "card-background",
-      "bytes": 1540448,
-      "sha256": "611e3a7922132302780c27bb1dc05aa2fc997c5154ee7f7c3ab5930465c5556a",
+      "bytes": 105776,
+      "sha256": "9d68fde0946503684064d0aa2ad69690f5b2a915beef9a9a7b8975377da97fe5",
       "width": 816,
-      "height": 1456
+      "height": 1456,
+      "original": {
+        "path": "images/white1-2.png",
+        "bytes": 1540448,
+        "sha256": "611e3a7922132302780c27bb1dc05aa2fc997c5154ee7f7c3ab5930465c5556a"
+      }
     },
     {
-      "path": "images/white2-1.png",
+      "path": "images/white2-1.webp",
       "kind": "card-background",
-      "bytes": 1486457,
-      "sha256": "6d63483026d21bc9ecca3da8f598707ad2d753955cd06db1ed3d6942a079474f",
+      "bytes": 109428,
+      "sha256": "75f188dccc0d0ede080feb46d74660932dc10144feb49c47bfe75d8b1d2464e2",
       "width": 816,
-      "height": 1456
+      "height": 1456,
+      "original": {
+        "path": "images/white2-1.png",
+        "bytes": 1486457,
+        "sha256": "6d63483026d21bc9ecca3da8f598707ad2d753955cd06db1ed3d6942a079474f"
+      }
     },
     {
-      "path": "images/white2-2.png",
+      "path": "images/white2-2.webp",
       "kind": "card-background",
-      "bytes": 1620584,
-      "sha256": "32d86d2df740e3d7aa40befffda76a4878d204cade6a23eb3258def4dc6284a9",
+      "bytes": 93814,
+      "sha256": "b5f8099e09d1cc3154b741bfdaec5093b41eeacf4b3403c9d4897b55cbbc0cbc",
       "width": 960,
-      "height": 1200
+      "height": 1200,
+      "original": {
+        "path": "images/white2-2.png",
+        "bytes": 1620584,
+        "sha256": "32d86d2df740e3d7aa40befffda76a4878d204cade6a23eb3258def4dc6284a9"
+      }
     },
     {
-      "path": "images/white3-1.png",
+      "path": "images/white3-1.webp",
       "kind": "card-background",
-      "bytes": 1297954,
-      "sha256": "4c190b88e9d917cebfb9a6abc2defd5f3954e9ca76b37104534963229dbe6559",
+      "bytes": 90002,
+      "sha256": "6b4a6695a12f57a386d2b3383a4f23d91dadecc4f77e2bafcd187267419247f5",
       "width": 960,
-      "height": 1200
+      "height": 1200,
+      "original": {
+        "path": "images/white3-1.png",
+        "bytes": 1297954,
+        "sha256": "4c190b88e9d917cebfb9a6abc2defd5f3954e9ca76b37104534963229dbe6559"
+      }
     },
     {
-      "path": "images/white3-2.png",
+      "path": "images/white3-2.webp",
       "kind": "card-background",
-      "bytes": 1434803,
-      "sha256": "ca0f5e32f3c153fe367dbda0876de62a08ddbbc2b2378672d770142dee12b15a",
+      "bytes": 116262,
+      "sha256": "6149250bb88839089fd78a30624fe4c230b52e721785b0896eac2f10924f8aec",
       "width": 960,
-      "height": 1200
+      "height": 1200,
+      "original": {
+        "path": "images/white3-2.png",
+        "bytes": 1434803,
+        "sha256": "ca0f5e32f3c153fe367dbda0876de62a08ddbbc2b2378672d770142dee12b15a"
+      }
     }
   ],
   "userAssets": [
     {
       "id": "N-06",
-      "path": "N-06.PNG",
+      "path": "N-06.webp",
       "kind": "user-noble-background",
-      "bytes": 679827,
+      "bytes": 35502,
       "width": 849,
       "height": 849,
-      "sha256": "cef8e0af87c7d632b7d5221527b0c76a087c3336adcd1ee9ba1ac8675d6027bc",
-      "source": "assets/user-nobles/N-06.PNG"
+      "sha256": "57dff2d002bda29207860b11f52d4581869d962a8a98caa21a5f52c50f5dccfa",
+      "source": "public/custom-nobles/N-06.webp",
+      "original": {
+        "path": "N-06.PNG",
+        "bytes": 679827,
+        "sha256": "cef8e0af87c7d632b7d5221527b0c76a087c3336adcd1ee9ba1ac8675d6027bc",
+        "source": "assets/user-nobles/N-06.PNG"
+      }
     },
     {
       "id": "N-07",
-      "path": "N-07.PNG",
+      "path": "N-07.webp",
       "kind": "user-noble-background",
-      "bytes": 1045460,
+      "bytes": 76916,
       "width": 900,
       "height": 900,
-      "sha256": "47810c99cdaf8bdededcb8a49ce3e0524fcfddbae097c4d1ee4b2a60c94bede7",
-      "source": "assets/user-nobles/N-07.PNG"
+      "sha256": "ac5d9db1cb0174374184c2c436a1d367cfd16a9df6652bb3e3fb03f1a5450563",
+      "source": "public/custom-nobles/N-07.webp",
+      "original": {
+        "path": "N-07.PNG",
+        "bytes": 1045460,
+        "sha256": "47810c99cdaf8bdededcb8a49ce3e0524fcfddbae097c4d1ee4b2a60c94bede7",
+        "source": "assets/user-nobles/N-07.PNG"
+      }
     }
   ],
   "cards": [
     {
       "id": "1-K-01",
       "status": "exact",
-      "image": "/pygem/images/noir1-1.png",
+      "image": "/pygem/images/noir1-1.webp",
       "target": {
         "tier": 1,
         "points": 0,
@@ -483,7 +710,7 @@
     {
       "id": "1-K-02",
       "status": "fixed-decoration",
-      "image": "/pygem/images/noir1-1.png",
+      "image": "/pygem/images/noir1-1.webp",
       "target": {
         "tier": 1,
         "points": 0,
@@ -501,7 +728,7 @@
     {
       "id": "1-K-03",
       "status": "exact",
-      "image": "/pygem/images/noir1-2.png",
+      "image": "/pygem/images/noir1-2.webp",
       "target": {
         "tier": 1,
         "points": 0,
@@ -523,7 +750,7 @@
     {
       "id": "1-K-04",
       "status": "fixed-decoration",
-      "image": "/pygem/images/noir1-1.png",
+      "image": "/pygem/images/noir1-1.webp",
       "target": {
         "tier": 1,
         "points": 0,
@@ -541,7 +768,7 @@
     {
       "id": "1-K-05",
       "status": "fixed-decoration",
-      "image": "/pygem/images/noir1-2.png",
+      "image": "/pygem/images/noir1-2.webp",
       "target": {
         "tier": 1,
         "points": 0,
@@ -559,7 +786,7 @@
     {
       "id": "1-K-06",
       "status": "exact",
-      "image": "/pygem/images/noir1-1.png",
+      "image": "/pygem/images/noir1-1.webp",
       "target": {
         "tier": 1,
         "points": 0,
@@ -581,7 +808,7 @@
     {
       "id": "1-K-07",
       "status": "fixed-decoration",
-      "image": "/pygem/images/noir1-2.png",
+      "image": "/pygem/images/noir1-2.webp",
       "target": {
         "tier": 1,
         "points": 1,
@@ -599,7 +826,7 @@
     {
       "id": "1-K-08",
       "status": "fixed-decoration",
-      "image": "/pygem/images/noir1-2.png",
+      "image": "/pygem/images/noir1-2.webp",
       "target": {
         "tier": 1,
         "points": 0,
@@ -617,7 +844,7 @@
     {
       "id": "1-W-01",
       "status": "exact",
-      "image": "/pygem/images/white1-1.png",
+      "image": "/pygem/images/white1-1.webp",
       "target": {
         "tier": 1,
         "points": 0,
@@ -639,7 +866,7 @@
     {
       "id": "1-W-02",
       "status": "fixed-decoration",
-      "image": "/pygem/images/white1-1.png",
+      "image": "/pygem/images/white1-1.webp",
       "target": {
         "tier": 1,
         "points": 0,
@@ -657,7 +884,7 @@
     {
       "id": "1-W-03",
       "status": "fixed-decoration",
-      "image": "/pygem/images/white1-2.png",
+      "image": "/pygem/images/white1-2.webp",
       "target": {
         "tier": 1,
         "points": 0,
@@ -675,7 +902,7 @@
     {
       "id": "1-W-04",
       "status": "fixed-decoration",
-      "image": "/pygem/images/white1-2.png",
+      "image": "/pygem/images/white1-2.webp",
       "target": {
         "tier": 1,
         "points": 0,
@@ -693,7 +920,7 @@
     {
       "id": "1-W-05",
       "status": "fixed-decoration",
-      "image": "/pygem/images/white1-2.png",
+      "image": "/pygem/images/white1-2.webp",
       "target": {
         "tier": 1,
         "points": 0,
@@ -711,7 +938,7 @@
     {
       "id": "1-W-06",
       "status": "fixed-decoration",
-      "image": "/pygem/images/white1-2.png",
+      "image": "/pygem/images/white1-2.webp",
       "target": {
         "tier": 1,
         "points": 0,
@@ -729,7 +956,7 @@
     {
       "id": "1-W-07",
       "status": "fixed-decoration",
-      "image": "/pygem/images/white1-2.png",
+      "image": "/pygem/images/white1-2.webp",
       "target": {
         "tier": 1,
         "points": 0,
@@ -747,7 +974,7 @@
     {
       "id": "1-W-08",
       "status": "fixed-decoration",
-      "image": "/pygem/images/white1-2.png",
+      "image": "/pygem/images/white1-2.webp",
       "target": {
         "tier": 1,
         "points": 1,
@@ -765,7 +992,7 @@
     {
       "id": "1-U-01",
       "status": "exact",
-      "image": "/pygem/images/blue1-1.png",
+      "image": "/pygem/images/blue1-1.webp",
       "target": {
         "tier": 1,
         "points": 0,
@@ -787,7 +1014,7 @@
     {
       "id": "1-U-02",
       "status": "fixed-decoration",
-      "image": "/pygem/images/blue1-2.png",
+      "image": "/pygem/images/blue1-2.webp",
       "target": {
         "tier": 1,
         "points": 0,
@@ -805,7 +1032,7 @@
     {
       "id": "1-U-03",
       "status": "fixed-decoration",
-      "image": "/pygem/images/blue1-2.png",
+      "image": "/pygem/images/blue1-2.webp",
       "target": {
         "tier": 1,
         "points": 0,
@@ -823,7 +1050,7 @@
     {
       "id": "1-U-04",
       "status": "fixed-decoration",
-      "image": "/pygem/images/blue1-1.png",
+      "image": "/pygem/images/blue1-1.webp",
       "target": {
         "tier": 1,
         "points": 0,
@@ -841,7 +1068,7 @@
     {
       "id": "1-U-05",
       "status": "fixed-decoration",
-      "image": "/pygem/images/blue1-2.png",
+      "image": "/pygem/images/blue1-2.webp",
       "target": {
         "tier": 1,
         "points": 0,
@@ -859,7 +1086,7 @@
     {
       "id": "1-U-06",
       "status": "fixed-decoration",
-      "image": "/pygem/images/blue1-1.png",
+      "image": "/pygem/images/blue1-1.webp",
       "target": {
         "tier": 1,
         "points": 0,
@@ -877,7 +1104,7 @@
     {
       "id": "1-U-07",
       "status": "fixed-decoration",
-      "image": "/pygem/images/blue1-2.png",
+      "image": "/pygem/images/blue1-2.webp",
       "target": {
         "tier": 1,
         "points": 0,
@@ -895,7 +1122,7 @@
     {
       "id": "1-U-08",
       "status": "fixed-decoration",
-      "image": "/pygem/images/blue1-2.png",
+      "image": "/pygem/images/blue1-2.webp",
       "target": {
         "tier": 1,
         "points": 1,
@@ -913,7 +1140,7 @@
     {
       "id": "1-G-01",
       "status": "exact",
-      "image": "/pygem/images/green1-1.png",
+      "image": "/pygem/images/green1-1.webp",
       "target": {
         "tier": 1,
         "points": 0,
@@ -935,7 +1162,7 @@
     {
       "id": "1-G-02",
       "status": "exact",
-      "image": "/pygem/images/green1-2.png",
+      "image": "/pygem/images/green1-2.webp",
       "target": {
         "tier": 1,
         "points": 0,
@@ -957,7 +1184,7 @@
     {
       "id": "1-G-03",
       "status": "fixed-decoration",
-      "image": "/pygem/images/green1-2.png",
+      "image": "/pygem/images/green1-2.webp",
       "target": {
         "tier": 1,
         "points": 0,
@@ -975,7 +1202,7 @@
     {
       "id": "1-G-04",
       "status": "fixed-decoration",
-      "image": "/pygem/images/green1-1.png",
+      "image": "/pygem/images/green1-1.webp",
       "target": {
         "tier": 1,
         "points": 0,
@@ -993,7 +1220,7 @@
     {
       "id": "1-G-05",
       "status": "exact",
-      "image": "/pygem/images/green1-1.png",
+      "image": "/pygem/images/green1-1.webp",
       "target": {
         "tier": 1,
         "points": 0,
@@ -1015,7 +1242,7 @@
     {
       "id": "1-G-06",
       "status": "fixed-decoration",
-      "image": "/pygem/images/green1-2.png",
+      "image": "/pygem/images/green1-2.webp",
       "target": {
         "tier": 1,
         "points": 0,
@@ -1033,7 +1260,7 @@
     {
       "id": "1-G-07",
       "status": "fixed-decoration",
-      "image": "/pygem/images/green1-2.png",
+      "image": "/pygem/images/green1-2.webp",
       "target": {
         "tier": 1,
         "points": 0,
@@ -1051,7 +1278,7 @@
     {
       "id": "1-G-08",
       "status": "fixed-decoration",
-      "image": "/pygem/images/green1-2.png",
+      "image": "/pygem/images/green1-2.webp",
       "target": {
         "tier": 1,
         "points": 1,
@@ -1069,7 +1296,7 @@
     {
       "id": "1-R-01",
       "status": "exact",
-      "image": "/pygem/images/red1-1.png",
+      "image": "/pygem/images/red1-1.webp",
       "target": {
         "tier": 1,
         "points": 0,
@@ -1091,7 +1318,7 @@
     {
       "id": "1-R-02",
       "status": "fixed-decoration",
-      "image": "/pygem/images/red1-1.png",
+      "image": "/pygem/images/red1-1.webp",
       "target": {
         "tier": 1,
         "points": 0,
@@ -1109,7 +1336,7 @@
     {
       "id": "1-R-03",
       "status": "fixed-decoration",
-      "image": "/pygem/images/red1-1.png",
+      "image": "/pygem/images/red1-1.webp",
       "target": {
         "tier": 1,
         "points": 0,
@@ -1127,7 +1354,7 @@
     {
       "id": "1-R-04",
       "status": "fixed-decoration",
-      "image": "/pygem/images/red1-2.png",
+      "image": "/pygem/images/red1-2.webp",
       "target": {
         "tier": 1,
         "points": 0,
@@ -1145,7 +1372,7 @@
     {
       "id": "1-R-05",
       "status": "fixed-decoration",
-      "image": "/pygem/images/red1-1.png",
+      "image": "/pygem/images/red1-1.webp",
       "target": {
         "tier": 1,
         "points": 0,
@@ -1163,7 +1390,7 @@
     {
       "id": "1-R-06",
       "status": "fixed-decoration",
-      "image": "/pygem/images/red1-1.png",
+      "image": "/pygem/images/red1-1.webp",
       "target": {
         "tier": 1,
         "points": 0,
@@ -1181,7 +1408,7 @@
     {
       "id": "1-R-07",
       "status": "fixed-decoration",
-      "image": "/pygem/images/red1-2.png",
+      "image": "/pygem/images/red1-2.webp",
       "target": {
         "tier": 1,
         "points": 0,
@@ -1199,7 +1426,7 @@
     {
       "id": "1-R-08",
       "status": "fixed-decoration",
-      "image": "/pygem/images/red1-1.png",
+      "image": "/pygem/images/red1-1.webp",
       "target": {
         "tier": 1,
         "points": 1,
@@ -1217,7 +1444,7 @@
     {
       "id": "2-K-01",
       "status": "fixed-decoration",
-      "image": "/pygem/images/noir2-2.png",
+      "image": "/pygem/images/noir2-2.webp",
       "target": {
         "tier": 2,
         "points": 1,
@@ -1235,7 +1462,7 @@
     {
       "id": "2-K-02",
       "status": "fixed-decoration",
-      "image": "/pygem/images/noir2-1.png",
+      "image": "/pygem/images/noir2-1.webp",
       "target": {
         "tier": 2,
         "points": 1,
@@ -1253,7 +1480,7 @@
     {
       "id": "2-K-03",
       "status": "fixed-decoration",
-      "image": "/pygem/images/noir2-2.png",
+      "image": "/pygem/images/noir2-2.webp",
       "target": {
         "tier": 2,
         "points": 2,
@@ -1271,7 +1498,7 @@
     {
       "id": "2-K-04",
       "status": "fixed-decoration",
-      "image": "/pygem/images/noir2-2.png",
+      "image": "/pygem/images/noir2-2.webp",
       "target": {
         "tier": 2,
         "points": 2,
@@ -1289,7 +1516,7 @@
     {
       "id": "2-K-05",
       "status": "fixed-decoration",
-      "image": "/pygem/images/noir2-1.png",
+      "image": "/pygem/images/noir2-1.webp",
       "target": {
         "tier": 2,
         "points": 2,
@@ -1307,7 +1534,7 @@
     {
       "id": "2-K-06",
       "status": "fixed-decoration",
-      "image": "/pygem/images/noir2-2.png",
+      "image": "/pygem/images/noir2-2.webp",
       "target": {
         "tier": 2,
         "points": 3,
@@ -1325,7 +1552,7 @@
     {
       "id": "2-W-01",
       "status": "fixed-decoration",
-      "image": "/pygem/images/white2-2.png",
+      "image": "/pygem/images/white2-2.webp",
       "target": {
         "tier": 2,
         "points": 1,
@@ -1343,7 +1570,7 @@
     {
       "id": "2-W-02",
       "status": "fixed-decoration",
-      "image": "/pygem/images/white2-1.png",
+      "image": "/pygem/images/white2-1.webp",
       "target": {
         "tier": 2,
         "points": 1,
@@ -1361,7 +1588,7 @@
     {
       "id": "2-W-03",
       "status": "fixed-decoration",
-      "image": "/pygem/images/white2-2.png",
+      "image": "/pygem/images/white2-2.webp",
       "target": {
         "tier": 2,
         "points": 2,
@@ -1379,7 +1606,7 @@
     {
       "id": "2-W-04",
       "status": "exact",
-      "image": "/pygem/images/white2-1.png",
+      "image": "/pygem/images/white2-1.webp",
       "target": {
         "tier": 2,
         "points": 2,
@@ -1401,7 +1628,7 @@
     {
       "id": "2-W-05",
       "status": "fixed-decoration",
-      "image": "/pygem/images/white2-2.png",
+      "image": "/pygem/images/white2-2.webp",
       "target": {
         "tier": 2,
         "points": 2,
@@ -1419,7 +1646,7 @@
     {
       "id": "2-W-06",
       "status": "fixed-decoration",
-      "image": "/pygem/images/white2-2.png",
+      "image": "/pygem/images/white2-2.webp",
       "target": {
         "tier": 2,
         "points": 3,
@@ -1437,7 +1664,7 @@
     {
       "id": "2-U-01",
       "status": "fixed-decoration",
-      "image": "/pygem/images/blue2-1.png",
+      "image": "/pygem/images/blue2-1.webp",
       "target": {
         "tier": 2,
         "points": 1,
@@ -1455,7 +1682,7 @@
     {
       "id": "2-U-02",
       "status": "fixed-decoration",
-      "image": "/pygem/images/blue2-2.png",
+      "image": "/pygem/images/blue2-2.webp",
       "target": {
         "tier": 2,
         "points": 1,
@@ -1473,7 +1700,7 @@
     {
       "id": "2-U-03",
       "status": "fixed-decoration",
-      "image": "/pygem/images/blue2-2.png",
+      "image": "/pygem/images/blue2-2.webp",
       "target": {
         "tier": 2,
         "points": 2,
@@ -1491,7 +1718,7 @@
     {
       "id": "2-U-04",
       "status": "fixed-decoration",
-      "image": "/pygem/images/blue2-1.png",
+      "image": "/pygem/images/blue2-1.webp",
       "target": {
         "tier": 2,
         "points": 2,
@@ -1509,7 +1736,7 @@
     {
       "id": "2-U-05",
       "status": "fixed-decoration",
-      "image": "/pygem/images/blue2-1.png",
+      "image": "/pygem/images/blue2-1.webp",
       "target": {
         "tier": 2,
         "points": 2,
@@ -1527,7 +1754,7 @@
     {
       "id": "2-U-06",
       "status": "fixed-decoration",
-      "image": "/pygem/images/blue2-2.png",
+      "image": "/pygem/images/blue2-2.webp",
       "target": {
         "tier": 2,
         "points": 3,
@@ -1545,7 +1772,7 @@
     {
       "id": "2-G-01",
       "status": "exact",
-      "image": "/pygem/images/green2-2.png",
+      "image": "/pygem/images/green2-2.webp",
       "target": {
         "tier": 2,
         "points": 1,
@@ -1567,7 +1794,7 @@
     {
       "id": "2-G-02",
       "status": "fixed-decoration",
-      "image": "/pygem/images/green2-2.png",
+      "image": "/pygem/images/green2-2.webp",
       "target": {
         "tier": 2,
         "points": 1,
@@ -1585,7 +1812,7 @@
     {
       "id": "2-G-03",
       "status": "fixed-decoration",
-      "image": "/pygem/images/green2-2.png",
+      "image": "/pygem/images/green2-2.webp",
       "target": {
         "tier": 2,
         "points": 2,
@@ -1603,7 +1830,7 @@
     {
       "id": "2-G-04",
       "status": "fixed-decoration",
-      "image": "/pygem/images/green2-2.png",
+      "image": "/pygem/images/green2-2.webp",
       "target": {
         "tier": 2,
         "points": 2,
@@ -1621,7 +1848,7 @@
     {
       "id": "2-G-05",
       "status": "fixed-decoration",
-      "image": "/pygem/images/green2-2.png",
+      "image": "/pygem/images/green2-2.webp",
       "target": {
         "tier": 2,
         "points": 2,
@@ -1639,7 +1866,7 @@
     {
       "id": "2-G-06",
       "status": "fixed-decoration",
-      "image": "/pygem/images/green2-1.png",
+      "image": "/pygem/images/green2-1.webp",
       "target": {
         "tier": 2,
         "points": 3,
@@ -1657,7 +1884,7 @@
     {
       "id": "2-R-01",
       "status": "fixed-decoration",
-      "image": "/pygem/images/red2-1.png",
+      "image": "/pygem/images/red2-1.webp",
       "target": {
         "tier": 2,
         "points": 1,
@@ -1675,7 +1902,7 @@
     {
       "id": "2-R-02",
       "status": "fixed-decoration",
-      "image": "/pygem/images/red2-2.png",
+      "image": "/pygem/images/red2-2.webp",
       "target": {
         "tier": 2,
         "points": 1,
@@ -1693,7 +1920,7 @@
     {
       "id": "2-R-03",
       "status": "fixed-decoration",
-      "image": "/pygem/images/red2-2.png",
+      "image": "/pygem/images/red2-2.webp",
       "target": {
         "tier": 2,
         "points": 2,
@@ -1711,7 +1938,7 @@
     {
       "id": "2-R-04",
       "status": "fixed-decoration",
-      "image": "/pygem/images/red2-2.png",
+      "image": "/pygem/images/red2-2.webp",
       "target": {
         "tier": 2,
         "points": 2,
@@ -1729,7 +1956,7 @@
     {
       "id": "2-R-05",
       "status": "fixed-decoration",
-      "image": "/pygem/images/red2-1.png",
+      "image": "/pygem/images/red2-1.webp",
       "target": {
         "tier": 2,
         "points": 2,
@@ -1747,7 +1974,7 @@
     {
       "id": "2-R-06",
       "status": "fixed-decoration",
-      "image": "/pygem/images/red2-1.png",
+      "image": "/pygem/images/red2-1.webp",
       "target": {
         "tier": 2,
         "points": 3,
@@ -1765,7 +1992,7 @@
     {
       "id": "3-K-01",
       "status": "fixed-decoration",
-      "image": "/pygem/images/noir3-2.png",
+      "image": "/pygem/images/noir3-2.webp",
       "target": {
         "tier": 3,
         "points": 3,
@@ -1783,7 +2010,7 @@
     {
       "id": "3-K-02",
       "status": "fixed-decoration",
-      "image": "/pygem/images/noir3-2.png",
+      "image": "/pygem/images/noir3-2.webp",
       "target": {
         "tier": 3,
         "points": 4,
@@ -1801,7 +2028,7 @@
     {
       "id": "3-K-03",
       "status": "fixed-decoration",
-      "image": "/pygem/images/noir3-2.png",
+      "image": "/pygem/images/noir3-2.webp",
       "target": {
         "tier": 3,
         "points": 4,
@@ -1819,7 +2046,7 @@
     {
       "id": "3-K-04",
       "status": "fixed-decoration",
-      "image": "/pygem/images/noir3-2.png",
+      "image": "/pygem/images/noir3-2.webp",
       "target": {
         "tier": 3,
         "points": 5,
@@ -1837,7 +2064,7 @@
     {
       "id": "3-W-01",
       "status": "fixed-decoration",
-      "image": "/pygem/images/white3-2.png",
+      "image": "/pygem/images/white3-2.webp",
       "target": {
         "tier": 3,
         "points": 3,
@@ -1855,7 +2082,7 @@
     {
       "id": "3-W-02",
       "status": "exact",
-      "image": "/pygem/images/white3-1.png",
+      "image": "/pygem/images/white3-1.webp",
       "target": {
         "tier": 3,
         "points": 4,
@@ -1877,7 +2104,7 @@
     {
       "id": "3-W-03",
       "status": "fixed-decoration",
-      "image": "/pygem/images/white3-1.png",
+      "image": "/pygem/images/white3-1.webp",
       "target": {
         "tier": 3,
         "points": 4,
@@ -1895,7 +2122,7 @@
     {
       "id": "3-W-04",
       "status": "fixed-decoration",
-      "image": "/pygem/images/white3-1.png",
+      "image": "/pygem/images/white3-1.webp",
       "target": {
         "tier": 3,
         "points": 5,
@@ -1913,7 +2140,7 @@
     {
       "id": "3-U-01",
       "status": "fixed-decoration",
-      "image": "/pygem/images/blue3-2.png",
+      "image": "/pygem/images/blue3-2.webp",
       "target": {
         "tier": 3,
         "points": 3,
@@ -1931,7 +2158,7 @@
     {
       "id": "3-U-02",
       "status": "exact",
-      "image": "/pygem/images/blue3-1.png",
+      "image": "/pygem/images/blue3-1.webp",
       "target": {
         "tier": 3,
         "points": 4,
@@ -1953,7 +2180,7 @@
     {
       "id": "3-U-03",
       "status": "fixed-decoration",
-      "image": "/pygem/images/blue3-2.png",
+      "image": "/pygem/images/blue3-2.webp",
       "target": {
         "tier": 3,
         "points": 4,
@@ -1971,7 +2198,7 @@
     {
       "id": "3-U-04",
       "status": "fixed-decoration",
-      "image": "/pygem/images/blue3-1.png",
+      "image": "/pygem/images/blue3-1.webp",
       "target": {
         "tier": 3,
         "points": 5,
@@ -1989,7 +2216,7 @@
     {
       "id": "3-G-01",
       "status": "fixed-decoration",
-      "image": "/pygem/images/green3-1.png",
+      "image": "/pygem/images/green3-1.webp",
       "target": {
         "tier": 3,
         "points": 3,
@@ -2007,7 +2234,7 @@
     {
       "id": "3-G-02",
       "status": "fixed-decoration",
-      "image": "/pygem/images/green3-2.png",
+      "image": "/pygem/images/green3-2.webp",
       "target": {
         "tier": 3,
         "points": 4,
@@ -2025,7 +2252,7 @@
     {
       "id": "3-G-03",
       "status": "fixed-decoration",
-      "image": "/pygem/images/green3-2.png",
+      "image": "/pygem/images/green3-2.webp",
       "target": {
         "tier": 3,
         "points": 4,
@@ -2043,7 +2270,7 @@
     {
       "id": "3-G-04",
       "status": "fixed-decoration",
-      "image": "/pygem/images/green3-2.png",
+      "image": "/pygem/images/green3-2.webp",
       "target": {
         "tier": 3,
         "points": 5,
@@ -2061,7 +2288,7 @@
     {
       "id": "3-R-01",
       "status": "fixed-decoration",
-      "image": "/pygem/images/red3-1.png",
+      "image": "/pygem/images/red3-1.webp",
       "target": {
         "tier": 3,
         "points": 3,
@@ -2079,7 +2306,7 @@
     {
       "id": "3-R-02",
       "status": "exact",
-      "image": "/pygem/images/red3-1.png",
+      "image": "/pygem/images/red3-1.webp",
       "target": {
         "tier": 3,
         "points": 4,
@@ -2101,7 +2328,7 @@
     {
       "id": "3-R-03",
       "status": "fixed-decoration",
-      "image": "/pygem/images/red3-1.png",
+      "image": "/pygem/images/red3-1.webp",
       "target": {
         "tier": 3,
         "points": 4,
@@ -2119,7 +2346,7 @@
     {
       "id": "3-R-04",
       "status": "fixed-decoration",
-      "image": "/pygem/images/red3-1.png",
+      "image": "/pygem/images/red3-1.webp",
       "target": {
         "tier": 3,
         "points": 5,
@@ -2139,7 +2366,7 @@
     {
       "id": "N-01",
       "status": "exact",
-      "image": "/pygem/images/green-noble-1.png",
+      "image": "/pygem/images/green-noble-1.webp",
       "target": {
         "points": 3,
         "requirement": {
@@ -2158,7 +2385,7 @@
     {
       "id": "N-02",
       "status": "exact",
-      "image": "/pygem/images/red-noble-1.png",
+      "image": "/pygem/images/red-noble-1.webp",
       "target": {
         "points": 3,
         "requirement": {
@@ -2177,7 +2404,7 @@
     {
       "id": "N-03",
       "status": "exact",
-      "image": "/pygem/images/white-noble-2.png",
+      "image": "/pygem/images/white-noble-2.webp",
       "target": {
         "points": 3,
         "requirement": {
@@ -2196,7 +2423,7 @@
     {
       "id": "N-04",
       "status": "exact",
-      "image": "/pygem/images/blue-noble-1.png",
+      "image": "/pygem/images/blue-noble-1.webp",
       "target": {
         "points": 3,
         "requirement": {
@@ -2215,7 +2442,7 @@
     {
       "id": "N-05",
       "status": "exact",
-      "image": "/pygem/images/red-noble-2.png",
+      "image": "/pygem/images/red-noble-2.webp",
       "target": {
         "points": 3,
         "requirement": {
@@ -2234,7 +2461,7 @@
     {
       "id": "N-06",
       "status": "user-supplied",
-      "image": "/custom-nobles/N-06.PNG",
+      "image": "/custom-nobles/N-06.webp",
       "target": {
         "points": 3,
         "requirement": {
@@ -2254,7 +2481,7 @@
     {
       "id": "N-07",
       "status": "user-supplied",
-      "image": "/custom-nobles/N-07.PNG",
+      "image": "/custom-nobles/N-07.webp",
       "target": {
         "points": 3,
         "requirement": {
@@ -2274,7 +2501,7 @@
     {
       "id": "N-08",
       "status": "exact",
-      "image": "/pygem/images/white-noble-1.png",
+      "image": "/pygem/images/white-noble-1.webp",
       "target": {
         "points": 3,
         "requirement": {
@@ -2293,7 +2520,7 @@
     {
       "id": "N-09",
       "status": "exact",
-      "image": "/pygem/images/noir-noble-2.png",
+      "image": "/pygem/images/noir-noble-2.webp",
       "target": {
         "points": 3,
         "requirement": {
@@ -2312,7 +2539,7 @@
     {
       "id": "N-10",
       "status": "exact",
-      "image": "/pygem/images/blue-noble-2.png",
+      "image": "/pygem/images/blue-noble-2.webp",
       "target": {
         "points": 3,
         "requirement": {
@@ -2332,15 +2559,15 @@
   "decks": [
     {
       "tier": 1,
-      "image": "/pygem/images/level-1-deck.png"
+      "image": "/pygem/images/level-1-deck.webp"
     },
     {
       "tier": 2,
-      "image": "/pygem/images/level-2-deck.png"
+      "image": "/pygem/images/level-2-deck.webp"
     },
     {
       "tier": 3,
-      "image": "/pygem/images/level-3-deck.png"
+      "image": "/pygem/images/level-3-deck.webp"
     }
   ],
   "icons": {
@@ -2350,5 +2577,9 @@
     "red": "/pygem/icons/ruby-red-diamond-inline.svg",
     "black": "/pygem/icons/obsidian-rectangle-inline.svg",
     "gold": "/pygem/icons/gold-coin-inline.svg"
+  },
+  "optimization": {
+    "format": "WebP",
+    "note": "User-provided conversions; original PNG paths, sizes and SHA-256 are retained per asset for provenance. Original PNG files were removed."
   }
 }
