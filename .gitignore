@@ -1,0 +1,28 @@
+node_modules/
+dist/
+dist-server/
+tsconfig.tsbuildinfo
+
+# Local environment and operating-system files
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+*.log
+
+# Build artifacts from server compilation (src/game included in tsconfig.server.json)
+src/game/*.js
+src/game/*.js.map
+
+# Local-only files
+deploy.md
+evals-draft.md
+ai-vs-ai-plan.md
+local-storage-plan.md
+gameplay_analysis.md
+gameplay_eval_implementation_plan.md
+splendor-game-log-*.json
+splendor-eval-report*.json
+evals/logs/
+evals/reports/

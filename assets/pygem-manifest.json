@@ -1,0 +1,2354 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "directory": "../PyGem-main",
+    "revision": null,
+    "revisionNote": "Neither local directory contains Git metadata.",
+    "licenseStatus": "unverified; no LICENSE, COPYING or NOTICE found locally",
+    "localUseAuthorization": "user confirmed images, icons and font for local-only game use; public distribution not established",
+    "sha256": {
+      "cards.py": "bd357e2ddc4db20333c077e879177f55b42c62a81f42b986f1fbcbe8d56a0122",
+      "gui_cards.py": "0daa65d06100f34839bb37b68e589f612b64931b2f7e28db6f8393675baa7aa1",
+      "splendor-main/src/game/constants.ts": "f50af149f8ee7fd3811c53759167162e8dcf0c8c645f47ee2ce2f21c344cea96"
+    }
+  },
+  "referenceData": {
+    "literalCounts": {
+      "1": 40,
+      "2": 29,
+      "3": 20
+    },
+    "effectiveCounts": {
+      "1": 40,
+      "2": 28,
+      "3": 20
+    },
+    "duplicateDictionaryKeys": [
+      {
+        "dictionary": "level2_cards_db",
+        "key": "w0b0g0r0n5",
+        "firstLine": 65,
+        "replacementLine": 71
+      }
+    ]
+  },
+  "summary": {
+    "cardExact": 14,
+    "cardFixedDecoration": 76,
+    "cardPending": 0,
+    "nobleExact": 8,
+    "nobleUserSupplied": 2,
+    "noblePending": 0,
+    "referenceCardsUnused": 74
+  },
+  "assets": [
+    {
+      "path": "fonts/Lobster-Regular.ttf",
+      "kind": "font",
+      "bytes": 396740,
+      "sha256": "cddd7779fb2e78382a654f91dd5a656218cf133a244e17a2f5d960c06f95d73c"
+    },
+    {
+      "path": "icons/diamond-blue-inline.svg",
+      "kind": "gem-icon",
+      "bytes": 1613,
+      "sha256": "8ce46361bc699622753c3c687b0918d32c90b098b58fc62ee08a9cbe1b3ca4cb",
+      "hasTextElement": false
+    },
+    {
+      "path": "icons/emerald-square-inline.svg",
+      "kind": "gem-icon",
+      "bytes": 2979,
+      "sha256": "7ca5c984a0d84394e59cdb46a363ab75984911bc01cdff948174ff74ce0927a2",
+      "hasTextElement": false
+    },
+    {
+      "path": "icons/gold-coin-inline.svg",
+      "kind": "gem-icon",
+      "bytes": 112888,
+      "sha256": "f7eb172149b61ea1608e8b090c648a303581cfc67da7316eeaceaa1317075a8c",
+      "hasTextElement": false
+    },
+    {
+      "path": "icons/obsidian-rectangle-inline.svg",
+      "kind": "gem-icon",
+      "bytes": 1850,
+      "sha256": "85af12a2002cf969af340cd01afc720a3b44a44bcb9505ca6ffb3961997d1f75",
+      "hasTextElement": false
+    },
+    {
+      "path": "icons/ruby-red-diamond-inline.svg",
+      "kind": "gem-icon",
+      "bytes": 1374,
+      "sha256": "d4b7666823a26d124d25aaee2caa68b7d090c2944284e1d57e84dfa4f50a5dd3",
+      "hasTextElement": false
+    },
+    {
+      "path": "icons/sapphire-octagon-inline.svg",
+      "kind": "gem-icon",
+      "bytes": 1989,
+      "sha256": "1381ae3281a83456edd17e5cc5979859759cd7a9515f86eba1d0f73304591f64",
+      "hasTextElement": false
+    },
+    {
+      "path": "images/blue-noble-1.png",
+      "kind": "noble-background",
+      "bytes": 2165511,
+      "sha256": "cccfc5db718318f3fcb8565661c078eb635df5cc5fc13c2a1eb8548dc78ba222",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "path": "images/blue-noble-2.png",
+      "kind": "noble-background",
+      "bytes": 1315819,
+      "sha256": "9246e456c054fef0cba8e3e9c5b0cd0f66daa1e83ffdcf5756a731adcaf4ef6a",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "path": "images/blue1-1.png",
+      "kind": "card-background",
+      "bytes": 1441835,
+      "sha256": "fe8b50415d11293424319b453c0e246da9f04bd12396c661c5d3c6acb4292828",
+      "width": 816,
+      "height": 1456
+    },
+    {
+      "path": "images/blue1-2.png",
+      "kind": "card-background",
+      "bytes": 1532733,
+      "sha256": "b8413a776acd3f8a26417684419920b9606b0801c2ddbc7298cc7d92aaf02cd5",
+      "width": 816,
+      "height": 1456
+    },
+    {
+      "path": "images/blue2-1.png",
+      "kind": "card-background",
+      "bytes": 1290542,
+      "sha256": "07057c7cd59db067bcdb42864f4d36a6387f6873acb91256a322dffd94170da8",
+      "width": 960,
+      "height": 1200
+    },
+    {
+      "path": "images/blue2-2.png",
+      "kind": "card-background",
+      "bytes": 1405854,
+      "sha256": "7c4c19fb0f7c72ded00a2f7b9cc157037d962db0136628d823ed9c4a5de60ca2",
+      "width": 816,
+      "height": 1456
+    },
+    {
+      "path": "images/blue3-1.png",
+      "kind": "card-background",
+      "bytes": 1450305,
+      "sha256": "f874cccac5945ef93a8655ce29c65fec1611f034be3c90d57fb18498cca2aee3",
+      "width": 960,
+      "height": 1200
+    },
+    {
+      "path": "images/blue3-2.png",
+      "kind": "card-background",
+      "bytes": 1562715,
+      "sha256": "7fde787ae9569d8104607ce90ac39a1b1cf6702268b30814433a548afa05d81f",
+      "width": 960,
+      "height": 1200
+    },
+    {
+      "path": "images/green-noble-1.png",
+      "kind": "noble-background",
+      "bytes": 1545102,
+      "sha256": "1884859fdf7c4415d76fca2020174cbaf00a99e2eeb07f4ccaa3f9e5b69389a4",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "path": "images/green-noble-2.png",
+      "kind": "noble-background",
+      "bytes": 1680765,
+      "sha256": "caa250f5dbcaec2968ce6739b99c0e9c5c97259e1344e6f24c359918370e7b54",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "path": "images/green1-1.png",
+      "kind": "card-background",
+      "bytes": 1657416,
+      "sha256": "eb4ed0b19e100c70eba2891275d6d7e202aa17d4ce985ccf8baf4fb015ab49f5",
+      "width": 960,
+      "height": 1200
+    },
+    {
+      "path": "images/green1-2.png",
+      "kind": "card-background",
+      "bytes": 1727075,
+      "sha256": "f182554d7d8fa70e27bd5b75b156744d0e80f30d5b66f563aa61f3ead4cc33f7",
+      "width": 960,
+      "height": 1200
+    },
+    {
+      "path": "images/green2-1.png",
+      "kind": "card-background",
+      "bytes": 1327666,
+      "sha256": "4139dd1043c6cf3d8f11df0273da49ac89cd2286eac1d154e41b6641d3b86c8e",
+      "width": 816,
+      "height": 1456
+    },
+    {
+      "path": "images/green2-2.png",
+      "kind": "card-background",
+      "bytes": 1468601,
+      "sha256": "09f90562763493205646e223db845515144efced208c80564353282b4e4457d5",
+      "width": 816,
+      "height": 1456
+    },
+    {
+      "path": "images/green3-1.png",
+      "kind": "card-background",
+      "bytes": 1464960,
+      "sha256": "7bd5904441754a8bcaafb3c36b6010feef4e270f51b0ee7a315e0fa126ccb486",
+      "width": 960,
+      "height": 1200
+    },
+    {
+      "path": "images/green3-2.png",
+      "kind": "card-background",
+      "bytes": 1398710,
+      "sha256": "828ce90d26eedd0fa95b916d5492c5935aa76605bfc2b7e48c027e5d6b42ac8b",
+      "width": 960,
+      "height": 1200
+    },
+    {
+      "path": "images/level-1-deck.png",
+      "kind": "deck-background",
+      "bytes": 1389377,
+      "sha256": "379e8cdba1c476a93adb013260ce128ea2430daaf9d783d26b25d057715a059a",
+      "width": 960,
+      "height": 1200
+    },
+    {
+      "path": "images/level-2-deck.png",
+      "kind": "deck-background",
+      "bytes": 1487428,
+      "sha256": "a3ed9d7e1e3b4645e7054b4a0e0e7ac2b8808d0e8c6619541b69dbb58b2ace1f",
+      "width": 960,
+      "height": 1200
+    },
+    {
+      "path": "images/level-3-deck.png",
+      "kind": "deck-background",
+      "bytes": 1534944,
+      "sha256": "78e08bd42c6e4a62acbbe3c3b1921df4c49a3851e4aa7225603e37dedb23e3a7",
+      "width": 960,
+      "height": 1200
+    },
+    {
+      "path": "images/noir-noble-1.png",
+      "kind": "noble-background",
+      "bytes": 1330457,
+      "sha256": "f0dc3942a1617c308e87a1fdf238205983f5aaadbc7fd5a01425c0daa73d76b0",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "path": "images/noir-noble-2.png",
+      "kind": "noble-background",
+      "bytes": 864129,
+      "sha256": "3ee6c8ef1c9feeeee72079e5b1f36c53954ff583888391c17c727c8a61f85314",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "path": "images/noir1-1.png",
+      "kind": "card-background",
+      "bytes": 1316248,
+      "sha256": "1806007746268f2ebd86f018c922724b9b2f709a1642e60e848ef20688e75c6e",
+      "width": 816,
+      "height": 1456
+    },
+    {
+      "path": "images/noir1-2.png",
+      "kind": "card-background",
+      "bytes": 1420366,
+      "sha256": "46fa8578b28c37e04fa0cf286e1908f7b032aca33cf05a2345e2fa6171787702",
+      "width": 816,
+      "height": 1456
+    },
+    {
+      "path": "images/noir2-1.png",
+      "kind": "card-background",
+      "bytes": 1281351,
+      "sha256": "2cd3e7371abe87063601fbaccce56c552c3d0458743b366f2d19c018e8cadcce",
+      "width": 960,
+      "height": 1200
+    },
+    {
+      "path": "images/noir2-2.png",
+      "kind": "card-background",
+      "bytes": 1518183,
+      "sha256": "5ca9586b2f878a95bd3ffd8c4960727cc5a625a9de2d9388b46906b27c609d72",
+      "width": 816,
+      "height": 1456
+    },
+    {
+      "path": "images/noir3-1.png",
+      "kind": "card-background",
+      "bytes": 1455533,
+      "sha256": "3677498856df15de52e7442503d448e93fe3b8e1c5e36108d7129617bdd6b836",
+      "width": 960,
+      "height": 1200
+    },
+    {
+      "path": "images/noir3-2.png",
+      "kind": "card-background",
+      "bytes": 1319212,
+      "sha256": "35bac207339292cd8fc23cd2791c4d6af5f4909c5a13c327656d155ac7df639a",
+      "width": 960,
+      "height": 1200
+    },
+    {
+      "path": "images/red-noble-1.png",
+      "kind": "noble-background",
+      "bytes": 1242751,
+      "sha256": "2efc5f875983ce666efdb3b83e244429a3ca39e063388f8072ecb97c7c65e8e3",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "path": "images/red-noble-2.png",
+      "kind": "noble-background",
+      "bytes": 1347471,
+      "sha256": "755c73c4c9de0df5fdf70110777b38ef1f29e5801e179562ffe681e0e4fbb144",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "path": "images/red1-1.png",
+      "kind": "card-background",
+      "bytes": 1310432,
+      "sha256": "847f21e4ef7be2d6c5baf0070554a2cf35c8db3969e597fdbd0bca879d55b77e",
+      "width": 960,
+      "height": 1200
+    },
+    {
+      "path": "images/red1-2.png",
+      "kind": "card-background",
+      "bytes": 1049628,
+      "sha256": "31293d5c94bab783222481f41379702b1a1a60884ea1784be19be0231f0932af",
+      "width": 960,
+      "height": 1200
+    },
+    {
+      "path": "images/red2-1.png",
+      "kind": "card-background",
+      "bytes": 1439007,
+      "sha256": "c5378f848cbb00f4e63a2669482175165fbf5741da0441db5aa348c000cadc0e",
+      "width": 960,
+      "height": 1200
+    },
+    {
+      "path": "images/red2-2.png",
+      "kind": "card-background",
+      "bytes": 1273814,
+      "sha256": "420aabc18d12920186a374bc9909bf4e60e9ba7b2d286ebc805b65e539d3f314",
+      "width": 960,
+      "height": 1200
+    },
+    {
+      "path": "images/red3-1.png",
+      "kind": "card-background",
+      "bytes": 1347964,
+      "sha256": "169206fda3419dd9f35090bad700a20748ac0e06a3abae5d3633f97e8e7fee49",
+      "width": 960,
+      "height": 1200
+    },
+    {
+      "path": "images/red3-2.png",
+      "kind": "card-background",
+      "bytes": 1107843,
+      "sha256": "6ca37e4f15670b2a27c521eb58527bb652e6eac6f52bfa74e65da91a9e5ff0af",
+      "width": 960,
+      "height": 1200
+    },
+    {
+      "path": "images/white-noble-1.png",
+      "kind": "noble-background",
+      "bytes": 1304101,
+      "sha256": "b35786a0d6bdbbc3f7be6068c4395cfa84282901aef5866f6ef6ad542478dad6",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "path": "images/white-noble-2.png",
+      "kind": "noble-background",
+      "bytes": 1541583,
+      "sha256": "8d6583e0f10ddd9e9223b319447a49c78293e5cf6f9d2055a16c828eabec4c29",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "path": "images/white1-1.png",
+      "kind": "card-background",
+      "bytes": 1601110,
+      "sha256": "e8e57340a16aada9ea853054faba530569a9e29a8e9fd738928f6c80978362b8",
+      "width": 816,
+      "height": 1456
+    },
+    {
+      "path": "images/white1-2.png",
+      "kind": "card-background",
+      "bytes": 1540448,
+      "sha256": "611e3a7922132302780c27bb1dc05aa2fc997c5154ee7f7c3ab5930465c5556a",
+      "width": 816,
+      "height": 1456
+    },
+    {
+      "path": "images/white2-1.png",
+      "kind": "card-background",
+      "bytes": 1486457,
+      "sha256": "6d63483026d21bc9ecca3da8f598707ad2d753955cd06db1ed3d6942a079474f",
+      "width": 816,
+      "height": 1456
+    },
+    {
+      "path": "images/white2-2.png",
+      "kind": "card-background",
+      "bytes": 1620584,
+      "sha256": "32d86d2df740e3d7aa40befffda76a4878d204cade6a23eb3258def4dc6284a9",
+      "width": 960,
+      "height": 1200
+    },
+    {
+      "path": "images/white3-1.png",
+      "kind": "card-background",
+      "bytes": 1297954,
+      "sha256": "4c190b88e9d917cebfb9a6abc2defd5f3954e9ca76b37104534963229dbe6559",
+      "width": 960,
+      "height": 1200
+    },
+    {
+      "path": "images/white3-2.png",
+      "kind": "card-background",
+      "bytes": 1434803,
+      "sha256": "ca0f5e32f3c153fe367dbda0876de62a08ddbbc2b2378672d770142dee12b15a",
+      "width": 960,
+      "height": 1200
+    }
+  ],
+  "userAssets": [
+    {
+      "id": "N-06",
+      "path": "N-06.PNG",
+      "kind": "user-noble-background",
+      "bytes": 679827,
+      "width": 849,
+      "height": 849,
+      "sha256": "cef8e0af87c7d632b7d5221527b0c76a087c3336adcd1ee9ba1ac8675d6027bc",
+      "source": "assets/user-nobles/N-06.PNG"
+    },
+    {
+      "id": "N-07",
+      "path": "N-07.PNG",
+      "kind": "user-noble-background",
+      "bytes": 1045460,
+      "width": 900,
+      "height": 900,
+      "sha256": "47810c99cdaf8bdededcb8a49ce3e0524fcfddbae097c4d1ee4b2a60c94bede7",
+      "source": "assets/user-nobles/N-07.PNG"
+    }
+  ],
+  "cards": [
+    {
+      "id": "1-K-01",
+      "status": "exact",
+      "image": "/pygem/images/noir1-1.png",
+      "target": {
+        "tier": 1,
+        "points": 0,
+        "bonus": "black",
+        "cost": {
+          "white": 1,
+          "blue": 1,
+          "green": 1,
+          "red": 1,
+          "black": 0
+        }
+      },
+      "reference": {
+        "costKey": "w1b1g1r1n0",
+        "line": 40,
+        "variant": 1
+      }
+    },
+    {
+      "id": "1-K-02",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/noir1-1.png",
+      "target": {
+        "tier": 1,
+        "points": 0,
+        "bonus": "black",
+        "cost": {
+          "white": 0,
+          "blue": 2,
+          "green": 2,
+          "red": 0,
+          "black": 0
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "1-K-03",
+      "status": "exact",
+      "image": "/pygem/images/noir1-2.png",
+      "target": {
+        "tier": 1,
+        "points": 0,
+        "bonus": "black",
+        "cost": {
+          "white": 0,
+          "blue": 0,
+          "green": 2,
+          "red": 1,
+          "black": 0
+        }
+      },
+      "reference": {
+        "costKey": "w0b0g2r1n0",
+        "line": 39,
+        "variant": 2
+      }
+    },
+    {
+      "id": "1-K-04",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/noir1-1.png",
+      "target": {
+        "tier": 1,
+        "points": 0,
+        "bonus": "black",
+        "cost": {
+          "white": 0,
+          "blue": 1,
+          "green": 0,
+          "red": 2,
+          "black": 0
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "1-K-05",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/noir1-2.png",
+      "target": {
+        "tier": 1,
+        "points": 0,
+        "bonus": "black",
+        "cost": {
+          "white": 0,
+          "blue": 2,
+          "green": 0,
+          "red": 1,
+          "black": 0
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "1-K-06",
+      "status": "exact",
+      "image": "/pygem/images/noir1-1.png",
+      "target": {
+        "tier": 1,
+        "points": 0,
+        "bonus": "black",
+        "cost": {
+          "white": 0,
+          "blue": 0,
+          "green": 3,
+          "red": 0,
+          "black": 0
+        }
+      },
+      "reference": {
+        "costKey": "w0b0g3r0n0",
+        "line": 38,
+        "variant": 1
+      }
+    },
+    {
+      "id": "1-K-07",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/noir1-2.png",
+      "target": {
+        "tier": 1,
+        "points": 1,
+        "bonus": "black",
+        "cost": {
+          "white": 1,
+          "blue": 0,
+          "green": 1,
+          "red": 3,
+          "black": 0
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "1-K-08",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/noir1-2.png",
+      "target": {
+        "tier": 1,
+        "points": 0,
+        "bonus": "black",
+        "cost": {
+          "white": 2,
+          "blue": 0,
+          "green": 0,
+          "red": 2,
+          "black": 0
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "1-W-01",
+      "status": "exact",
+      "image": "/pygem/images/white1-1.png",
+      "target": {
+        "tier": 1,
+        "points": 0,
+        "bonus": "white",
+        "cost": {
+          "white": 0,
+          "blue": 1,
+          "green": 1,
+          "red": 1,
+          "black": 1
+        }
+      },
+      "reference": {
+        "costKey": "w0b1g1r1n1",
+        "line": 8,
+        "variant": 1
+      }
+    },
+    {
+      "id": "1-W-02",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/white1-1.png",
+      "target": {
+        "tier": 1,
+        "points": 0,
+        "bonus": "white",
+        "cost": {
+          "white": 0,
+          "blue": 1,
+          "green": 0,
+          "red": 2,
+          "black": 0
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "1-W-03",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/white1-2.png",
+      "target": {
+        "tier": 1,
+        "points": 0,
+        "bonus": "white",
+        "cost": {
+          "white": 0,
+          "blue": 0,
+          "green": 0,
+          "red": 2,
+          "black": 2
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "1-W-04",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/white1-2.png",
+      "target": {
+        "tier": 1,
+        "points": 0,
+        "bonus": "white",
+        "cost": {
+          "white": 0,
+          "blue": 2,
+          "green": 0,
+          "red": 0,
+          "black": 1
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "1-W-05",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/white1-2.png",
+      "target": {
+        "tier": 1,
+        "points": 0,
+        "bonus": "white",
+        "cost": {
+          "white": 0,
+          "blue": 0,
+          "green": 0,
+          "red": 0,
+          "black": 3
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "1-W-06",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/white1-2.png",
+      "target": {
+        "tier": 1,
+        "points": 0,
+        "bonus": "white",
+        "cost": {
+          "white": 0,
+          "blue": 0,
+          "green": 2,
+          "red": 1,
+          "black": 0
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "1-W-07",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/white1-2.png",
+      "target": {
+        "tier": 1,
+        "points": 0,
+        "bonus": "white",
+        "cost": {
+          "white": 0,
+          "blue": 0,
+          "green": 1,
+          "red": 1,
+          "black": 3
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "1-W-08",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/white1-2.png",
+      "target": {
+        "tier": 1,
+        "points": 1,
+        "bonus": "white",
+        "cost": {
+          "white": 0,
+          "blue": 0,
+          "green": 0,
+          "red": 0,
+          "black": 4
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "1-U-01",
+      "status": "exact",
+      "image": "/pygem/images/blue1-1.png",
+      "target": {
+        "tier": 1,
+        "points": 0,
+        "bonus": "blue",
+        "cost": {
+          "white": 1,
+          "blue": 0,
+          "green": 1,
+          "red": 1,
+          "black": 1
+        }
+      },
+      "reference": {
+        "costKey": "w1b0g1r1n1",
+        "line": 16,
+        "variant": 1
+      }
+    },
+    {
+      "id": "1-U-02",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/blue1-2.png",
+      "target": {
+        "tier": 1,
+        "points": 0,
+        "bonus": "blue",
+        "cost": {
+          "white": 1,
+          "blue": 0,
+          "green": 2,
+          "red": 0,
+          "black": 0
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "1-U-03",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/blue1-2.png",
+      "target": {
+        "tier": 1,
+        "points": 0,
+        "bonus": "blue",
+        "cost": {
+          "white": 2,
+          "blue": 0,
+          "green": 0,
+          "red": 2,
+          "black": 0
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "1-U-04",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/blue1-1.png",
+      "target": {
+        "tier": 1,
+        "points": 0,
+        "bonus": "blue",
+        "cost": {
+          "white": 2,
+          "blue": 0,
+          "green": 1,
+          "red": 0,
+          "black": 0
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "1-U-05",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/blue1-2.png",
+      "target": {
+        "tier": 1,
+        "points": 0,
+        "bonus": "blue",
+        "cost": {
+          "white": 3,
+          "blue": 0,
+          "green": 0,
+          "red": 0,
+          "black": 0
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "1-U-06",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/blue1-1.png",
+      "target": {
+        "tier": 1,
+        "points": 0,
+        "bonus": "blue",
+        "cost": {
+          "white": 0,
+          "blue": 0,
+          "green": 0,
+          "red": 1,
+          "black": 2
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "1-U-07",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/blue1-2.png",
+      "target": {
+        "tier": 1,
+        "points": 0,
+        "bonus": "blue",
+        "cost": {
+          "white": 1,
+          "blue": 0,
+          "green": 0,
+          "red": 3,
+          "black": 1
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "1-U-08",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/blue1-2.png",
+      "target": {
+        "tier": 1,
+        "points": 1,
+        "bonus": "blue",
+        "cost": {
+          "white": 4,
+          "blue": 0,
+          "green": 0,
+          "red": 0,
+          "black": 0
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "1-G-01",
+      "status": "exact",
+      "image": "/pygem/images/green1-1.png",
+      "target": {
+        "tier": 1,
+        "points": 0,
+        "bonus": "green",
+        "cost": {
+          "white": 1,
+          "blue": 1,
+          "green": 0,
+          "red": 1,
+          "black": 1
+        }
+      },
+      "reference": {
+        "costKey": "w1b1g0r1n1",
+        "line": 24,
+        "variant": 1
+      }
+    },
+    {
+      "id": "1-G-02",
+      "status": "exact",
+      "image": "/pygem/images/green1-2.png",
+      "target": {
+        "tier": 1,
+        "points": 0,
+        "bonus": "green",
+        "cost": {
+          "white": 2,
+          "blue": 1,
+          "green": 0,
+          "red": 0,
+          "black": 0
+        }
+      },
+      "reference": {
+        "costKey": "w2b1g0r0n0",
+        "line": 23,
+        "variant": 2
+      }
+    },
+    {
+      "id": "1-G-03",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/green1-2.png",
+      "target": {
+        "tier": 1,
+        "points": 0,
+        "bonus": "green",
+        "cost": {
+          "white": 0,
+          "blue": 1,
+          "green": 0,
+          "red": 0,
+          "black": 2
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "1-G-04",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/green1-1.png",
+      "target": {
+        "tier": 1,
+        "points": 0,
+        "bonus": "green",
+        "cost": {
+          "white": 1,
+          "blue": 2,
+          "green": 0,
+          "red": 0,
+          "black": 0
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "1-G-05",
+      "status": "exact",
+      "image": "/pygem/images/green1-1.png",
+      "target": {
+        "tier": 1,
+        "points": 0,
+        "bonus": "green",
+        "cost": {
+          "white": 0,
+          "blue": 0,
+          "green": 0,
+          "red": 3,
+          "black": 0
+        }
+      },
+      "reference": {
+        "costKey": "w0b0g0r3n0",
+        "line": 22,
+        "variant": 1
+      }
+    },
+    {
+      "id": "1-G-06",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/green1-2.png",
+      "target": {
+        "tier": 1,
+        "points": 0,
+        "bonus": "green",
+        "cost": {
+          "white": 2,
+          "blue": 0,
+          "green": 0,
+          "red": 0,
+          "black": 2
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "1-G-07",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/green1-2.png",
+      "target": {
+        "tier": 1,
+        "points": 0,
+        "bonus": "green",
+        "cost": {
+          "white": 0,
+          "blue": 1,
+          "green": 0,
+          "red": 1,
+          "black": 3
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "1-G-08",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/green1-2.png",
+      "target": {
+        "tier": 1,
+        "points": 1,
+        "bonus": "green",
+        "cost": {
+          "white": 0,
+          "blue": 4,
+          "green": 0,
+          "red": 0,
+          "black": 0
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "1-R-01",
+      "status": "exact",
+      "image": "/pygem/images/red1-1.png",
+      "target": {
+        "tier": 1,
+        "points": 0,
+        "bonus": "red",
+        "cost": {
+          "white": 1,
+          "blue": 1,
+          "green": 1,
+          "red": 0,
+          "black": 1
+        }
+      },
+      "reference": {
+        "costKey": "w1b1g1r0n1",
+        "line": 32,
+        "variant": 1
+      }
+    },
+    {
+      "id": "1-R-02",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/red1-1.png",
+      "target": {
+        "tier": 1,
+        "points": 0,
+        "bonus": "red",
+        "cost": {
+          "white": 2,
+          "blue": 2,
+          "green": 0,
+          "red": 0,
+          "black": 0
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "1-R-03",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/red1-1.png",
+      "target": {
+        "tier": 1,
+        "points": 0,
+        "bonus": "red",
+        "cost": {
+          "white": 1,
+          "blue": 1,
+          "green": 0,
+          "red": 0,
+          "black": 0
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "1-R-04",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/red1-2.png",
+      "target": {
+        "tier": 1,
+        "points": 0,
+        "bonus": "red",
+        "cost": {
+          "white": 0,
+          "blue": 0,
+          "green": 2,
+          "red": 0,
+          "black": 1
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "1-R-05",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/red1-1.png",
+      "target": {
+        "tier": 1,
+        "points": 0,
+        "bonus": "red",
+        "cost": {
+          "white": 0,
+          "blue": 3,
+          "green": 0,
+          "red": 0,
+          "black": 0
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "1-R-06",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/red1-1.png",
+      "target": {
+        "tier": 1,
+        "points": 0,
+        "bonus": "red",
+        "cost": {
+          "white": 1,
+          "blue": 0,
+          "green": 2,
+          "red": 0,
+          "black": 0
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "1-R-07",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/red1-2.png",
+      "target": {
+        "tier": 1,
+        "points": 0,
+        "bonus": "red",
+        "cost": {
+          "white": 1,
+          "blue": 0,
+          "green": 2,
+          "red": 0,
+          "black": 1
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "1-R-08",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/red1-1.png",
+      "target": {
+        "tier": 1,
+        "points": 1,
+        "bonus": "red",
+        "cost": {
+          "white": 0,
+          "blue": 0,
+          "green": 4,
+          "red": 0,
+          "black": 0
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "2-K-01",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/noir2-2.png",
+      "target": {
+        "tier": 2,
+        "points": 1,
+        "bonus": "black",
+        "cost": {
+          "white": 2,
+          "blue": 0,
+          "green": 3,
+          "red": 2,
+          "black": 0
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "2-K-02",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/noir2-1.png",
+      "target": {
+        "tier": 2,
+        "points": 1,
+        "bonus": "black",
+        "cost": {
+          "white": 0,
+          "blue": 3,
+          "green": 0,
+          "red": 2,
+          "black": 0
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "2-K-03",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/noir2-2.png",
+      "target": {
+        "tier": 2,
+        "points": 2,
+        "bonus": "black",
+        "cost": {
+          "white": 0,
+          "blue": 1,
+          "green": 0,
+          "red": 4,
+          "black": 0
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "2-K-04",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/noir2-2.png",
+      "target": {
+        "tier": 2,
+        "points": 2,
+        "bonus": "black",
+        "cost": {
+          "white": 0,
+          "blue": 0,
+          "green": 5,
+          "red": 0,
+          "black": 0
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "2-K-05",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/noir2-1.png",
+      "target": {
+        "tier": 2,
+        "points": 2,
+        "bonus": "black",
+        "cost": {
+          "white": 0,
+          "blue": 0,
+          "green": 0,
+          "red": 5,
+          "black": 0
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "2-K-06",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/noir2-2.png",
+      "target": {
+        "tier": 2,
+        "points": 3,
+        "bonus": "black",
+        "cost": {
+          "white": 5,
+          "blue": 0,
+          "green": 0,
+          "red": 0,
+          "black": 3
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "2-W-01",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/white2-2.png",
+      "target": {
+        "tier": 2,
+        "points": 1,
+        "bonus": "white",
+        "cost": {
+          "white": 0,
+          "blue": 2,
+          "green": 2,
+          "red": 0,
+          "black": 3
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "2-W-02",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/white2-1.png",
+      "target": {
+        "tier": 2,
+        "points": 1,
+        "bonus": "white",
+        "cost": {
+          "white": 0,
+          "blue": 0,
+          "green": 1,
+          "red": 1,
+          "black": 3
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "2-W-03",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/white2-2.png",
+      "target": {
+        "tier": 2,
+        "points": 2,
+        "bonus": "white",
+        "cost": {
+          "white": 0,
+          "blue": 0,
+          "green": 1,
+          "red": 4,
+          "black": 0
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "2-W-04",
+      "status": "exact",
+      "image": "/pygem/images/white2-1.png",
+      "target": {
+        "tier": 2,
+        "points": 2,
+        "bonus": "white",
+        "cost": {
+          "white": 0,
+          "blue": 0,
+          "green": 0,
+          "red": 5,
+          "black": 0
+        }
+      },
+      "reference": {
+        "costKey": "w0b0g0r5n0",
+        "line": 48,
+        "variant": 1
+      }
+    },
+    {
+      "id": "2-W-05",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/white2-2.png",
+      "target": {
+        "tier": 2,
+        "points": 2,
+        "bonus": "white",
+        "cost": {
+          "white": 0,
+          "blue": 0,
+          "green": 0,
+          "red": 0,
+          "black": 5
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "2-W-06",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/white2-2.png",
+      "target": {
+        "tier": 2,
+        "points": 3,
+        "bonus": "white",
+        "cost": {
+          "white": 0,
+          "blue": 3,
+          "green": 0,
+          "red": 0,
+          "black": 5
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "2-U-01",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/blue2-1.png",
+      "target": {
+        "tier": 2,
+        "points": 1,
+        "bonus": "blue",
+        "cost": {
+          "white": 3,
+          "blue": 0,
+          "green": 2,
+          "red": 0,
+          "black": 2
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "2-U-02",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/blue2-2.png",
+      "target": {
+        "tier": 2,
+        "points": 1,
+        "bonus": "blue",
+        "cost": {
+          "white": 2,
+          "blue": 0,
+          "green": 0,
+          "red": 2,
+          "black": 1
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "2-U-03",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/blue2-2.png",
+      "target": {
+        "tier": 2,
+        "points": 2,
+        "bonus": "blue",
+        "cost": {
+          "white": 4,
+          "blue": 0,
+          "green": 0,
+          "red": 0,
+          "black": 1
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "2-U-04",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/blue2-1.png",
+      "target": {
+        "tier": 2,
+        "points": 2,
+        "bonus": "blue",
+        "cost": {
+          "white": 5,
+          "blue": 0,
+          "green": 0,
+          "red": 0,
+          "black": 0
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "2-U-05",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/blue2-1.png",
+      "target": {
+        "tier": 2,
+        "points": 2,
+        "bonus": "blue",
+        "cost": {
+          "white": 0,
+          "blue": 0,
+          "green": 5,
+          "red": 0,
+          "black": 0
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "2-U-06",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/blue2-2.png",
+      "target": {
+        "tier": 2,
+        "points": 3,
+        "bonus": "blue",
+        "cost": {
+          "white": 0,
+          "blue": 0,
+          "green": 5,
+          "red": 3,
+          "black": 0
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "2-G-01",
+      "status": "exact",
+      "image": "/pygem/images/green2-2.png",
+      "target": {
+        "tier": 2,
+        "points": 1,
+        "bonus": "green",
+        "cost": {
+          "white": 2,
+          "blue": 3,
+          "green": 0,
+          "red": 0,
+          "black": 2
+        }
+      },
+      "reference": {
+        "costKey": "w2b3g0r0n2",
+        "line": 61,
+        "variant": 2
+      }
+    },
+    {
+      "id": "2-G-02",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/green2-2.png",
+      "target": {
+        "tier": 2,
+        "points": 1,
+        "bonus": "green",
+        "cost": {
+          "white": 3,
+          "blue": 1,
+          "green": 0,
+          "red": 1,
+          "black": 0
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "2-G-03",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/green2-2.png",
+      "target": {
+        "tier": 2,
+        "points": 2,
+        "bonus": "green",
+        "cost": {
+          "white": 1,
+          "blue": 4,
+          "green": 0,
+          "red": 0,
+          "black": 0
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "2-G-04",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/green2-2.png",
+      "target": {
+        "tier": 2,
+        "points": 2,
+        "bonus": "green",
+        "cost": {
+          "white": 0,
+          "blue": 5,
+          "green": 0,
+          "red": 0,
+          "black": 0
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "2-G-05",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/green2-2.png",
+      "target": {
+        "tier": 2,
+        "points": 2,
+        "bonus": "green",
+        "cost": {
+          "white": 0,
+          "blue": 0,
+          "green": 0,
+          "red": 0,
+          "black": 5
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "2-G-06",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/green2-1.png",
+      "target": {
+        "tier": 2,
+        "points": 3,
+        "bonus": "green",
+        "cost": {
+          "white": 0,
+          "blue": 5,
+          "green": 0,
+          "red": 0,
+          "black": 3
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "2-R-01",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/red2-1.png",
+      "target": {
+        "tier": 2,
+        "points": 1,
+        "bonus": "red",
+        "cost": {
+          "white": 2,
+          "blue": 1,
+          "green": 3,
+          "red": 0,
+          "black": 1
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "2-R-02",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/red2-2.png",
+      "target": {
+        "tier": 2,
+        "points": 1,
+        "bonus": "red",
+        "cost": {
+          "white": 0,
+          "blue": 1,
+          "green": 2,
+          "red": 0,
+          "black": 2
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "2-R-03",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/red2-2.png",
+      "target": {
+        "tier": 2,
+        "points": 2,
+        "bonus": "red",
+        "cost": {
+          "white": 0,
+          "blue": 2,
+          "green": 4,
+          "red": 0,
+          "black": 0
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "2-R-04",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/red2-2.png",
+      "target": {
+        "tier": 2,
+        "points": 2,
+        "bonus": "red",
+        "cost": {
+          "white": 0,
+          "blue": 5,
+          "green": 0,
+          "red": 0,
+          "black": 0
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "2-R-05",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/red2-1.png",
+      "target": {
+        "tier": 2,
+        "points": 2,
+        "bonus": "red",
+        "cost": {
+          "white": 5,
+          "blue": 0,
+          "green": 0,
+          "red": 0,
+          "black": 0
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "2-R-06",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/red2-1.png",
+      "target": {
+        "tier": 2,
+        "points": 3,
+        "bonus": "red",
+        "cost": {
+          "white": 3,
+          "blue": 0,
+          "green": 0,
+          "red": 0,
+          "black": 5
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "3-K-01",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/noir3-2.png",
+      "target": {
+        "tier": 3,
+        "points": 3,
+        "bonus": "black",
+        "cost": {
+          "white": 3,
+          "blue": 3,
+          "green": 3,
+          "red": 5,
+          "black": 0
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "3-K-02",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/noir3-2.png",
+      "target": {
+        "tier": 3,
+        "points": 4,
+        "bonus": "black",
+        "cost": {
+          "white": 0,
+          "blue": 7,
+          "green": 0,
+          "red": 0,
+          "black": 0
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "3-K-03",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/noir3-2.png",
+      "target": {
+        "tier": 3,
+        "points": 4,
+        "bonus": "black",
+        "cost": {
+          "white": 3,
+          "blue": 0,
+          "green": 3,
+          "red": 6,
+          "black": 0
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "3-K-04",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/noir3-2.png",
+      "target": {
+        "tier": 3,
+        "points": 5,
+        "bonus": "black",
+        "cost": {
+          "white": 0,
+          "blue": 7,
+          "green": 0,
+          "red": 3,
+          "black": 0
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "3-W-01",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/white3-2.png",
+      "target": {
+        "tier": 3,
+        "points": 3,
+        "bonus": "white",
+        "cost": {
+          "white": 0,
+          "blue": 3,
+          "green": 3,
+          "red": 3,
+          "black": 5
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "3-W-02",
+      "status": "exact",
+      "image": "/pygem/images/white3-1.png",
+      "target": {
+        "tier": 3,
+        "points": 4,
+        "bonus": "white",
+        "cost": {
+          "white": 0,
+          "blue": 0,
+          "green": 0,
+          "red": 0,
+          "black": 7
+        }
+      },
+      "reference": {
+        "costKey": "w0b0g0r0n7",
+        "line": 79,
+        "variant": 1
+      }
+    },
+    {
+      "id": "3-W-03",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/white3-1.png",
+      "target": {
+        "tier": 3,
+        "points": 4,
+        "bonus": "white",
+        "cost": {
+          "white": 0,
+          "blue": 3,
+          "green": 6,
+          "red": 0,
+          "black": 3
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "3-W-04",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/white3-1.png",
+      "target": {
+        "tier": 3,
+        "points": 5,
+        "bonus": "white",
+        "cost": {
+          "white": 0,
+          "blue": 0,
+          "green": 3,
+          "red": 0,
+          "black": 7
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "3-U-01",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/blue3-2.png",
+      "target": {
+        "tier": 3,
+        "points": 3,
+        "bonus": "blue",
+        "cost": {
+          "white": 3,
+          "blue": 0,
+          "green": 3,
+          "red": 3,
+          "black": 3
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "3-U-02",
+      "status": "exact",
+      "image": "/pygem/images/blue3-1.png",
+      "target": {
+        "tier": 3,
+        "points": 4,
+        "bonus": "blue",
+        "cost": {
+          "white": 7,
+          "blue": 0,
+          "green": 0,
+          "red": 0,
+          "black": 0
+        }
+      },
+      "reference": {
+        "costKey": "w7b0g0r0n0",
+        "line": 83,
+        "variant": 1
+      }
+    },
+    {
+      "id": "3-U-03",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/blue3-2.png",
+      "target": {
+        "tier": 3,
+        "points": 4,
+        "bonus": "blue",
+        "cost": {
+          "white": 6,
+          "blue": 0,
+          "green": 0,
+          "red": 3,
+          "black": 3
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "3-U-04",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/blue3-1.png",
+      "target": {
+        "tier": 3,
+        "points": 5,
+        "bonus": "blue",
+        "cost": {
+          "white": 7,
+          "blue": 0,
+          "green": 0,
+          "red": 0,
+          "black": 3
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "3-G-01",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/green3-1.png",
+      "target": {
+        "tier": 3,
+        "points": 3,
+        "bonus": "green",
+        "cost": {
+          "white": 3,
+          "blue": 5,
+          "green": 0,
+          "red": 3,
+          "black": 3
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "3-G-02",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/green3-2.png",
+      "target": {
+        "tier": 3,
+        "points": 4,
+        "bonus": "green",
+        "cost": {
+          "white": 0,
+          "blue": 0,
+          "green": 0,
+          "red": 7,
+          "black": 0
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "3-G-03",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/green3-2.png",
+      "target": {
+        "tier": 3,
+        "points": 4,
+        "bonus": "green",
+        "cost": {
+          "white": 3,
+          "blue": 0,
+          "green": 0,
+          "red": 6,
+          "black": 3
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "3-G-04",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/green3-2.png",
+      "target": {
+        "tier": 3,
+        "points": 5,
+        "bonus": "green",
+        "cost": {
+          "white": 3,
+          "blue": 0,
+          "green": 0,
+          "red": 7,
+          "black": 0
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "3-R-01",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/red3-1.png",
+      "target": {
+        "tier": 3,
+        "points": 3,
+        "bonus": "red",
+        "cost": {
+          "white": 3,
+          "blue": 3,
+          "green": 5,
+          "red": 0,
+          "black": 3
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "3-R-02",
+      "status": "exact",
+      "image": "/pygem/images/red3-1.png",
+      "target": {
+        "tier": 3,
+        "points": 4,
+        "bonus": "red",
+        "cost": {
+          "white": 0,
+          "blue": 0,
+          "green": 7,
+          "red": 0,
+          "black": 0
+        }
+      },
+      "reference": {
+        "costKey": "w0b0g7r0n0",
+        "line": 91,
+        "variant": 1
+      }
+    },
+    {
+      "id": "3-R-03",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/red3-1.png",
+      "target": {
+        "tier": 3,
+        "points": 4,
+        "bonus": "red",
+        "cost": {
+          "white": 3,
+          "blue": 3,
+          "green": 6,
+          "red": 0,
+          "black": 0
+        }
+      },
+      "reference": null
+    },
+    {
+      "id": "3-R-04",
+      "status": "fixed-decoration",
+      "image": "/pygem/images/red3-1.png",
+      "target": {
+        "tier": 3,
+        "points": 5,
+        "bonus": "red",
+        "cost": {
+          "white": 0,
+          "blue": 3,
+          "green": 7,
+          "red": 0,
+          "black": 0
+        }
+      },
+      "reference": null
+    }
+  ],
+  "nobles": [
+    {
+      "id": "N-01",
+      "status": "exact",
+      "image": "/pygem/images/green-noble-1.png",
+      "target": {
+        "points": 3,
+        "requirement": {
+          "white": 0,
+          "blue": 0,
+          "green": 4,
+          "red": 4,
+          "black": 0
+        }
+      },
+      "reference": {
+        "costKey": "w0b0g4r4n0"
+      },
+      "note": null
+    },
+    {
+      "id": "N-02",
+      "status": "exact",
+      "image": "/pygem/images/red-noble-1.png",
+      "target": {
+        "points": 3,
+        "requirement": {
+          "white": 0,
+          "blue": 0,
+          "green": 0,
+          "red": 4,
+          "black": 4
+        }
+      },
+      "reference": {
+        "costKey": "w0b0g0r4n4"
+      },
+      "note": null
+    },
+    {
+      "id": "N-03",
+      "status": "exact",
+      "image": "/pygem/images/white-noble-2.png",
+      "target": {
+        "points": 3,
+        "requirement": {
+          "white": 4,
+          "blue": 4,
+          "green": 0,
+          "red": 0,
+          "black": 0
+        }
+      },
+      "reference": {
+        "costKey": "w4b4g0r0n0"
+      },
+      "note": null
+    },
+    {
+      "id": "N-04",
+      "status": "exact",
+      "image": "/pygem/images/blue-noble-1.png",
+      "target": {
+        "points": 3,
+        "requirement": {
+          "white": 0,
+          "blue": 4,
+          "green": 4,
+          "red": 0,
+          "black": 0
+        }
+      },
+      "reference": {
+        "costKey": "w0b4g4r0n0"
+      },
+      "note": null
+    },
+    {
+      "id": "N-05",
+      "status": "exact",
+      "image": "/pygem/images/red-noble-2.png",
+      "target": {
+        "points": 3,
+        "requirement": {
+          "white": 3,
+          "blue": 3,
+          "green": 0,
+          "red": 0,
+          "black": 3
+        }
+      },
+      "reference": {
+        "costKey": "w3b3g0r0n3"
+      },
+      "note": null
+    },
+    {
+      "id": "N-06",
+      "status": "user-supplied",
+      "image": "/custom-nobles/N-06.PNG",
+      "target": {
+        "points": 3,
+        "requirement": {
+          "white": 3,
+          "blue": 0,
+          "green": 3,
+          "red": 3,
+          "black": 0
+        }
+      },
+      "reference": {
+        "source": "assets/user-nobles/N-06.PNG",
+        "sha256": "cef8e0af87c7d632b7d5221527b0c76a087c3336adcd1ee9ba1ac8675d6027bc"
+      },
+      "note": "User-supplied artwork; not a PyGem requirement match."
+    },
+    {
+      "id": "N-07",
+      "status": "user-supplied",
+      "image": "/custom-nobles/N-07.PNG",
+      "target": {
+        "points": 3,
+        "requirement": {
+          "white": 0,
+          "blue": 3,
+          "green": 0,
+          "red": 3,
+          "black": 3
+        }
+      },
+      "reference": {
+        "source": "assets/user-nobles/N-07.PNG",
+        "sha256": "47810c99cdaf8bdededcb8a49ce3e0524fcfddbae097c4d1ee4b2a60c94bede7"
+      },
+      "note": "User-supplied artwork; not a PyGem requirement match."
+    },
+    {
+      "id": "N-08",
+      "status": "exact",
+      "image": "/pygem/images/white-noble-1.png",
+      "target": {
+        "points": 3,
+        "requirement": {
+          "white": 4,
+          "blue": 0,
+          "green": 0,
+          "red": 0,
+          "black": 4
+        }
+      },
+      "reference": {
+        "costKey": "w4b0g0r0n4"
+      },
+      "note": null
+    },
+    {
+      "id": "N-09",
+      "status": "exact",
+      "image": "/pygem/images/noir-noble-2.png",
+      "target": {
+        "points": 3,
+        "requirement": {
+          "white": 0,
+          "blue": 0,
+          "green": 3,
+          "red": 3,
+          "black": 3
+        }
+      },
+      "reference": {
+        "costKey": "w0b0g3r3n3"
+      },
+      "note": null
+    },
+    {
+      "id": "N-10",
+      "status": "exact",
+      "image": "/pygem/images/blue-noble-2.png",
+      "target": {
+        "points": 3,
+        "requirement": {
+          "white": 3,
+          "blue": 3,
+          "green": 3,
+          "red": 0,
+          "black": 0
+        }
+      },
+      "reference": {
+        "costKey": "w3b3g3r0n0"
+      },
+      "note": null
+    }
+  ],
+  "decks": [
+    {
+      "tier": 1,
+      "image": "/pygem/images/level-1-deck.png"
+    },
+    {
+      "tier": 2,
+      "image": "/pygem/images/level-2-deck.png"
+    },
+    {
+      "tier": 3,
+      "image": "/pygem/images/level-3-deck.png"
+    }
+  ],
+  "icons": {
+    "white": "/pygem/icons/diamond-blue-inline.svg",
+    "blue": "/pygem/icons/sapphire-octagon-inline.svg",
+    "green": "/pygem/icons/emerald-square-inline.svg",
+    "red": "/pygem/icons/ruby-red-diamond-inline.svg",
+    "black": "/pygem/icons/obsidian-rectangle-inline.svg",
+    "gold": "/pygem/icons/gold-coin-inline.svg"
+  }
+}

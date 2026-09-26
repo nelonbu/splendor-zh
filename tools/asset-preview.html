@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>PyGem 素材映射预览（开发用）</title>
+  <style>
+    :root { color-scheme: dark; font-family: system-ui, sans-serif; background: #101827; color: #edf2f8; }
+    * { box-sizing: border-box; }
+    body { max-width: 1500px; margin: auto; padding: 24px; }
+    h1 { margin-bottom: 4px; }
+    p { color: #b7c6d8; line-height: 1.5; }
+    .warning { border: 1px solid #a77131; background: #2d2218; padding: 12px; border-radius: 8px; }
+    .summary { display: flex; flex-wrap: wrap; gap: 12px; margin: 18px 0; }
+    .summary span { background: #20344e; padding: 8px 12px; border-radius: 6px; }
+    .controls { display: flex; flex-wrap: wrap; gap: 12px; margin: 20px 0; }
+    select, input { background: #17263a; color: inherit; border: 1px solid #54708f; border-radius: 6px; padding: 9px; font: inherit; }
+    input { min-width: 220px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; }
+    figure { margin: 0; background: #1c2b40; border: 1px solid #344b65; border-radius: 8px; overflow: hidden; }
+    figure.pending { border-color: #c19052; }
+    .image { height: 230px; display: flex; align-items: center; justify-content: center; background: #122033; }
+    .image img { max-width: 100%; max-height: 100%; object-fit: contain; }
+    .image .missing { color: #e8b870; padding: 12px; text-align: center; }
+    figcaption { padding: 10px; font-size: 13px; overflow-wrap: anywhere; }
+    figcaption strong { display: block; font-size: 15px; margin-bottom: 5px; }
+    figcaption span { display: block; margin: 3px 0; color: #c4d2e0; }
+    .exact { color: #99dfb0; } .fixed-decoration { color: #f0d48f; } .user-supplied { color: #b7b4ff; } .pending-label { color: #f1a987; }
+    a { color: #9fcafb; }
+  </style>
+</head>
+<body>
+  <h1>PyGem 素材映射预览</h1>
+  <p>开发用页面；只展示原始素材与映射结果，不参与正式游戏逻辑。图片本身与下方独立列出的费用、分数分开显示，便于检查图中是否已印有数值或文字。</p>
+  <p class="warning">PyGem 素材仅按用户确认用于本地运行。自备贵族图片只补足展示映射，不会改变主项目的贵族要求。</p>
+  <div id="summary" class="summary"></div>
+  <div class="controls">
+    <label>类别 <select id="view"><option value="cards">发展卡映射</option><option value="nobles">贵族映射</option><option value="raw">原始素材</option></select></label>
+    <label>状态 <select id="status"><option value="all">全部</option><option value="exact">精确匹配</option><option value="fixed-decoration">固定装饰分配</option><option value="user-supplied">自备补图</option><option value="pending">待处理</option></select></label>
+    <label>筛选 <input id="search" type="search" placeholder="ID、颜色、文件名"></label>
+  </div>
+  <p id="count"></p>
+  <div id="results" class="grid"></div>
+  <script type="module">
+    const summary = document.querySelector('#summary');
+    const results = document.querySelector('#results');
+    const count = document.querySelector('#count');
+    const view = document.querySelector('#view');
+    const status = document.querySelector('#status');
+    const search = document.querySelector('#search');
+    const colors = ['white', 'blue', 'green', 'red', 'black'];
+    const cost = values => colors.filter(color => values[color]).map(color => `${color} ${values[color]}`).join(' · ');
+
+    function tile(title, image, details, state) {
+      const figure = document.createElement('figure');
+      if (state === 'pending') figure.className = 'pending';
+      const imageBox = document.createElement('div');
+      imageBox.className = 'image';
+      if (image) {
+        const img = document.createElement('img');
+        img.src = image;
+        img.alt = title;
+        img.loading = 'lazy';
+        imageBox.append(img);
+      } else {
+        const missing = document.createElement('span');
+        missing.className = 'missing';
+        missing.textContent = state === 'pending' ? '待人工分配素材' : '此文件无图片预览';
+        imageBox.append(missing);
+      }
+      const caption = document.createElement('figcaption');
+      const heading = document.createElement('strong');
+      heading.textContent = title;
+      caption.append(heading);
+      for (const detail of details) {
+        const line = document.createElement('span');
+        line.textContent = detail;
+        if (detail === 'exact' || detail === 'fixed-decoration' || detail === 'user-supplied') line.className = detail;
+        if (detail === 'pending') line.className = 'pending-label';
+        caption.append(line);
+      }
+      figure.append(imageBox, caption);
+      return figure;
+    }
+
+    try {
+      const response = await fetch('/pygem/manifest.json');
+      if (!response.ok) throw new Error(`HTTP ${response.status}：缺少项目内素材清单`);
+      const manifest = await response.json();
+      const metrics = [
+        `卡牌精确匹配 ${manifest.summary.cardExact}`,
+        `卡牌固定装饰 ${manifest.summary.cardFixedDecoration}`,
+        `贵族精确匹配 ${manifest.summary.nobleExact}`,
+        `贵族自备补图 ${manifest.summary.nobleUserSupplied}`,
+        `贵族待处理 ${manifest.summary.noblePending}`,
+        `游戏素材文件 ${manifest.assets.filter(asset => asset.kind !== 'font').length + manifest.userAssets.length}`,
+        `重复字典键 ${manifest.referenceData.duplicateDictionaryKeys.length}`,
+      ];
+      for (const metric of metrics) {
+        const span = document.createElement('span');
+        span.textContent = metric;
+        summary.append(span);
+      }
+
+      function render() {
+        results.replaceChildren();
+        const selectedView = view.value;
+        const selectedStatus = status.value;
+        const query = search.value.trim().toLowerCase();
+        const items = selectedView === 'cards' ? manifest.cards : selectedView === 'nobles' ? manifest.nobles : [
+          ...manifest.assets.filter(asset => asset.kind !== 'font').map(asset => ({ ...asset, url: `/pygem/${asset.path}` })),
+          ...manifest.userAssets.map(asset => ({ ...asset, url: `/custom-nobles/${asset.path}` })),
+        ];
+        let shown = 0;
+        for (const item of items) {
+          if (selectedView !== 'raw' && selectedStatus !== 'all' && item.status !== selectedStatus) continue;
+          const searchable = JSON.stringify(item).toLowerCase();
+          if (query && !searchable.includes(query)) continue;
+          let element;
+          if (selectedView === 'cards') {
+            element = tile(item.id, item.image, [item.status, `等级 ${item.target.tier} · 分数 ${item.target.points} · 加成 ${item.target.bonus}`, `费用 ${cost(item.target.cost)}`, item.image], item.status);
+          } else if (selectedView === 'nobles') {
+            element = tile(item.id, item.image, [item.status, `分数 ${item.target.points}`, `要求 ${cost(item.target.requirement)}`, item.image || item.note], item.status);
+          } else {
+            const imagePath = item.path.toLowerCase();
+            const isImage = imagePath.endsWith('.png') || imagePath.endsWith('.svg');
+            element = tile(item.path, isImage ? item.url : null, [item.kind, `${item.bytes.toLocaleString()} bytes`, item.width ? `${item.width} × ${item.height}` : '', `SHA-256 ${item.sha256.slice(0, 16)}…`]);
+          }
+          results.append(element);
+          shown++;
+        }
+        count.textContent = `显示 ${shown} / ${items.length} 项`;
+      }
+      for (const control of [view, status, search]) control.addEventListener('input', render);
+      render();
+    } catch (error) {
+      count.textContent = `无法加载素材清单：${error.message}`;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Splendor AI Eval Dashboard</title>
+<style>
+  :root {
+    --bg: #0d1520;
+    --surface: #162035;
+    --surface2: #1a2535;
+    --border: #2a3a55;
+    --text: #e8dcc8;
+    --text-muted: #6a7a9a;
+    --p0: #60a5fa;
+    --p0-bright: #93bbfd;
+    --p0-dim: rgba(96,165,250,0.15);
+    --p1: #f87171;
+    --p1-bright: #fca5a5;
+    --p1-dim: rgba(248,113,113,0.15);
+    --gold: #f5c518;
+    --gold-dim: rgba(245,197,24,0.25);
+    --green: #34d399;
+    --orange: #fb923c;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 24px;
+    line-height: 1.5;
+    min-height: 100vh;
+  }
+
+  .header { text-align: center; margin-bottom: 32px; }
+  .header h1 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #f5c518 0%, #e6a817 50%, #ffd85e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 8px rgba(245,197,24,0.3));
+    margin-bottom: 6px;
+  }
+  .header .subtitle { color: var(--text-muted); font-size: 0.85rem; }
+
+  .game-banner {
+    display: flex; justify-content: center; gap: 32px; align-items: center;
+    background: var(--surface); border: 1.5px solid var(--border); border-radius: 10px;
+    padding: 20px 32px; margin-bottom: 28px; flex-wrap: wrap;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+  }
+  .game-banner .matchup { font-size: 1.05rem; font-weight: 700; text-align: center; letter-spacing: 0.5px; }
+  .game-banner .matchup .vs { color: var(--text-muted); margin: 0 10px; font-weight: 400; }
+  .game-banner .model-name.p0 { color: var(--p0-bright); }
+  .game-banner .model-name.p1 { color: var(--p1-bright); }
+  .game-banner .meta { color: var(--text-muted); font-size: 0.75rem; text-align: center; }
+  .game-banner .result { font-size: 0.9rem; font-weight: 600; text-align: center; }
+  .game-banner .result .winner {
+    background: linear-gradient(135deg, #f5c518, #e6a817);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .game-banner .result .tiebreak { color: var(--orange); font-size: 0.7rem; font-weight: 400; }
+
+  .tier-badges { display: flex; justify-content: center; gap: 48px; margin-bottom: 28px; }
+  .tier-badge { text-align: center; }
+  .tier-badge .label { font-size: 0.7rem; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+  .tier-badge .badge {
+    width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center;
+    justify-content: center; font-size: 28px; font-weight: 700; margin: 0 auto 6px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+  }
+  .tier-badge .score { font-size: 0.75rem; color: var(--text-muted); }
+  .tier-S { background: linear-gradient(135deg, #f5c518, #e6a817); color: #1a1008; }
+  .tier-A { background: linear-gradient(135deg, #34d399, #10b981); color: #0d1520; }
+  .tier-B { background: linear-gradient(135deg, #60a5fa, #3b82f6); color: #0d1520; }
+  .tier-C { background: linear-gradient(135deg, #fb923c, #f97316); color: #0d1520; }
+  .tier-D { background: linear-gradient(135deg, #f87171, #ef4444); color: #0d1520; }
+  .tier-F { background: linear-gradient(135deg, #6b7280, #4b5563); color: var(--text); }
+
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+  .grid.full { grid-template-columns: 1fr; }
+  @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+
+  .card {
+    background: var(--surface); border: 1.5px solid var(--border); border-radius: 10px;
+    padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+  }
+  .card h3 {
+    font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;
+    letter-spacing: 1.5px; margin-bottom: 16px; font-weight: 600;
+  }
+
+  /* Bar chart */
+  .bar-group { margin-bottom: 14px; }
+  .bar-group:last-child { margin-bottom: 0; }
+  .bar-label { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 5px; display: flex; justify-content: space-between; align-items: center; }
+  .bar-pair { display: flex; gap: 4px; }
+  .bar-track { flex: 1; height: 22px; background: var(--surface2); border-radius: 4px; overflow: hidden; position: relative; border: 1px solid rgba(42,58,85,0.5); }
+  .bar-fill { height: 100%; border-radius: 3px; transition: width 0.6s ease; min-width: 1px; }
+  .bar-fill.p0 { background: linear-gradient(90deg, var(--p0), var(--p0-bright)); }
+  .bar-fill.p1 { background: linear-gradient(90deg, var(--p1), var(--p1-bright)); }
+  .bar-val { position: absolute; right: 6px; top: 50%; transform: translateY(-50%); font-size: 0.7rem; font-weight: 600; color: var(--text); text-shadow: 0 1px 3px rgba(0,0,0,0.8); }
+
+  /* Comparison table */
+  table.cmp { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+  table.cmp th { text-align: left; color: var(--text-muted); font-weight: 600; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.5px; }
+  table.cmp td { padding: 7px 0; border-bottom: 1px solid rgba(42,58,85,0.3); }
+  table.cmp td:nth-child(2), table.cmp td:nth-child(3) { text-align: right; font-variant-numeric: tabular-nums; }
+  table.cmp .better { font-weight: 600; }
+  table.cmp .p0-better { color: var(--p0-bright); }
+  table.cmp .p1-better { color: var(--p1-bright); }
+  table.cmp .neutral { color: var(--text-muted); }
+  table.cmp td:first-child { display: flex; align-items: center; gap: 4px; }
+
+  /* Radar / spider chart via SVG */
+  .radar-wrap { display: flex; justify-content: center; align-items: center; padding: 10px 0; }
+  .radar-wrap svg { max-width: 340px; width: 100%; }
+
+  /* Donut */
+  .donut-row { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+  .donut-item { text-align: center; }
+  .donut-item svg { display: block; margin: 0 auto 8px; }
+  .donut-item .donut-label { font-size: 0.7rem; color: var(--text-muted); }
+
+  /* Head-to-head callouts */
+  .callout-row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .callout {
+    flex: 1; min-width: 120px; background: var(--surface2); border: 1px solid rgba(42,58,85,0.5);
+    border-radius: 8px; padding: 14px; text-align: center;
+  }
+  .callout .val { font-size: 1.3rem; font-weight: 700; margin-bottom: 2px; }
+  .callout .desc { font-size: 0.7rem; color: var(--text-muted); display: flex; align-items: center; justify-content: center; gap: 4px; }
+
+  /* Legend */
+  .legend { display: flex; justify-content: center; gap: 24px; margin-bottom: 24px; font-size: 0.8rem; }
+  .legend span { display: flex; align-items: center; gap: 6px; }
+  .legend .dot { width: 10px; height: 10px; border-radius: 3px; }
+  .legend .dot.p0 { background: var(--p0); }
+  .legend .dot.p1 { background: var(--p1); }
+
+  .drop-zone {
+    border: 2px dashed var(--border); border-radius: 10px; padding: 40px; text-align: center;
+    color: var(--text-muted); cursor: pointer; transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .drop-zone:hover, .drop-zone.drag-over {
+    border-color: var(--gold);
+    box-shadow: 0 0 16px rgba(245,197,24,0.15);
+  }
+  .drop-zone input { display: none; }
+  .drop-zone p { font-size: 0.9rem; margin-bottom: 4px; }
+  .drop-zone .hint { font-size: 0.7rem; }
+
+  /* Info tooltip */
+  .info-tip {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 15px; height: 15px; border-radius: 50%;
+    background: rgba(42,58,85,0.6); color: var(--text-muted);
+    font-size: 0.55rem; font-weight: 700; cursor: help;
+    position: relative; flex-shrink: 0; border: 1px solid rgba(106,122,154,0.3);
+    font-style: italic; font-family: Georgia, serif;
+    transition: background 0.15s, color 0.15s;
+  }
+  .info-tip:hover { background: var(--gold-dim); color: var(--gold); border-color: rgba(245,197,24,0.4); }
+  .info-tip .tip-text {
+    display: none; position: absolute; left: 50%; transform: translateX(-50%);
+    background: #1e293b; color: var(--text); padding: 8px 12px; border-radius: 6px;
+    font-size: 0.72rem; font-weight: 400; font-style: normal; font-family: 'Segoe UI', system-ui, sans-serif;
+    white-space: normal; width: 240px; text-align: left; line-height: 1.4;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.5); border: 1px solid var(--border);
+    z-index: 100; pointer-events: none;
+  }
+  /* Default: above */
+  .info-tip .tip-text { bottom: calc(100% + 8px); }
+  .info-tip .tip-text::after {
+    content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+    border: 6px solid transparent; border-top-color: #1e293b;
+  }
+  /* Flipped: below */
+  .info-tip .tip-text.tip-below { bottom: auto; top: calc(100% + 8px); }
+  .info-tip .tip-text.tip-below::after {
+    top: auto; bottom: 100%;
+    border-top-color: transparent; border-bottom-color: #1e293b;
+  }
+  .info-tip:hover .tip-text { display: block; }
+
+  #dashboard { display: none; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Splendor AI Eval Dashboard</h1>
+  <p class="subtitle">Drop an eval report JSON to visualize</p>
+</div>
+
+<div id="loader">
+  <div class="drop-zone" id="dropZone">
+    <p>Drop <code>splendor-eval-report-*.json</code> here or click to browse</p>
+    <p class="hint">Generated by the "Download Eval Report" button after an AI vs AI game</p>
+    <input type="file" id="fileInput" accept=".json">
+  </div>
+</div>
+
+<div id="dashboard"></div>
+
+<script>
+const $ = (s) => document.querySelector(s);
+const dropZone = $('#dropZone');
+const fileInput = $('#fileInput');
+
+dropZone.addEventListener('click', () => fileInput.click());
+dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('drag-over'); });
+dropZone.addEventListener('dragleave', () => dropZone.classList.remove('drag-over'));
+dropZone.addEventListener('drop', e => {
+  e.preventDefault(); dropZone.classList.remove('drag-over');
+  if (e.dataTransfer.files[0]) loadFile(e.dataTransfer.files[0]);
+});
+fileInput.addEventListener('change', () => { if (fileInput.files[0]) loadFile(fileInput.files[0]); });
+
+// Auto-render if data was injected (e.g. opened from the game)
+if (window.__EVAL_DATA__) { render(window.__EVAL_DATA__); }
+
+function loadFile(file) {
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      const data = JSON.parse(reader.result);
+      render(data);
+    } catch { alert('Invalid JSON file'); }
+  };
+  reader.readAsText(file);
+}
+
+// ── Metric definitions (for tooltips) ──────────────────
+const TIPS = {
+  // Efficiency
+  scoringPace: 'Points earned per turn played. Higher = more efficient scoring.',
+  firstPurchaseTurn: 'Turn number of the player\'s first card purchase. Lower = faster start.',
+  purchaseCadence: 'Average gap (in own turns) between consecutive purchases. Lower = more consistent buying.',
+  longestDrought: 'Maximum consecutive turns without making a purchase. Lower = fewer stalls.',
+  milestone5: 'Turn number when the player first reached 5 prestige points.',
+  milestone10: 'Turn number when the player first reached 10 prestige points.',
+  milestone15: 'Turn number when the player first reached 15 prestige points.',
+  // Action Quality
+  purchaseRate: 'Fraction of turns spent purchasing cards. Higher = more action-oriented play.',
+  ptsPerPurchase: 'Average prestige points gained per card purchase. Higher = better card selection.',
+  zeroPtRate: 'Fraction of purchases that were 0-prestige engine-building cards. Lower often (but not always) = better.',
+  gemHoarding: 'Fraction of turns holding 8+ gems without purchasing within the next 2 own turns. Lower = less wasteful.',
+  reserveEff: 'Fraction of reserved cards that were eventually purchased. Higher = reserves used wisely.',
+  wastedReserves: 'Count of reserved cards never purchased by game end. Lower = fewer wasted slots.',
+  goldSpendRate: 'Gold gems spent divided by gold gems acquired. Higher = better use of gold wildcards.',
+  // Action Distribution
+  purchases: 'Total card purchases made during the game.',
+  takeGems: 'Turns spent taking 3 distinct gem colors.',
+  take2Gems: 'Turns spent taking 2 gems of the same color (requires 4+ in supply).',
+  reserves: 'Total card reservations made during the game.',
+  // Tier Distribution
+  tier1: 'Number of Tier 1 (cheap, low-prestige engine) cards purchased.',
+  tier2: 'Number of Tier 2 (mid-range) cards purchased.',
+  tier3: 'Number of Tier 3 (expensive, high-prestige) cards purchased.',
+  // Compliance
+  fallbackRate: 'Fraction of turns that used a fallback (random) action instead of the AI\'s choice.',
+  malformedJson: 'Fraction of turns where the AI returned unparseable JSON.',
+  illegalMove: 'Fraction of turns where the AI proposed an invalid action.',
+  fbEarly: 'Fallback count in turns 1\u201310 (early game).',
+  fbMid: 'Fallback count in turns 11\u201320 (mid game).',
+  fbLate: 'Fallback count in turns 21+ (late game).',
+  // Latency
+  latMean: 'Average API response time per turn.',
+  latMedian: 'Median (50th percentile) API response time.',
+  latP95: '95th percentile API response time \u2014 captures worst-case tail latency.',
+  latMin: 'Fastest single-turn API response.',
+  latMax: 'Slowest single-turn API response.',
+  latTotal: 'Sum of all API response times for this player.',
+  // Strategy
+  bonusDiversity: 'Number of distinct gem colors (0\u20135) with at least 1 card bonus at game end.',
+  bonusSpread: 'Shannon entropy of the final bonus distribution. Higher = more evenly spread bonuses.',
+  nobleCount: 'Number of noble tiles claimed during the game (each worth 3 prestige).',
+  nobleAligned: 'Fraction of purchases whose bonus color matches a remaining board noble\'s requirement.',
+  blockingReserve: 'Fraction of reserves where the opponent could have afforded the card \u2014 a defensive play.',
+  urgencyShift: 'Change in average purchase prestige after opponent crosses 12 points vs before. Positive = shifted to higher-value cards.',
+  // Head-to-Head
+  pointDiff: 'Winner\'s final score minus loser\'s score. From Player 1 perspective.',
+  leadChanges: 'Number of times the leading player switched during the game.',
+  longestLead: 'Maximum consecutive turns one player held the scoring lead.',
+  comeback: 'Whether either player overcame a 5+ point deficit to win.',
+  maxDeficit: 'Largest point deficit the winner recovered from during the game.',
+  // Composite
+  compositeScore: 'Weighted score: Win 30%, Efficiency 20%, Action Quality 20%, Compliance 15%, Strategy 15%.',
+  tier: 'Letter grade based on composite score and fallback rate thresholds. S(\u22650.80), A(\u22650.65), B(\u22650.50), C(\u22650.35), D(\u22650.20), F(<0.20).',
+  // Key Rates donuts
+  purchaseRateDonut: 'Fraction of turns spent purchasing cards.',
+  complianceDonut: '1 minus fallback rate \u2014 how often the AI produced a valid, legal move.',
+  reserveEffDonut: 'Fraction of reserved cards eventually purchased.',
+};
+
+function tip(key) {
+  const text = TIPS[key];
+  if (!text) return '';
+  return `<span class="info-tip">i<span class="tip-text">${text}</span></span>`;
+}
+
+function fmt(n, d = 1) {
+  if (n == null) return '\u2013';
+  return typeof n === 'number' ? (Number.isInteger(n) ? n.toString() : n.toFixed(d)) : n;
+}
+function pct(n) { return (n * 100).toFixed(1) + '%'; }
+function ms(n) { return (n / 1000).toFixed(1) + 's'; }
+function dur(msVal) {
+  const s = Math.floor(msVal / 1000);
+  const m = Math.floor(s / 60);
+  return m > 0 ? `${m}m ${s % 60}s` : `${s}s`;
+}
+
+function bar(label, v0, v1, maxVal, fmtFn, tipKey) {
+  fmtFn = fmtFn || fmt;
+  const pct0 = maxVal > 0 ? (v0 / maxVal) * 100 : 0;
+  const pct1 = maxVal > 0 ? (v1 / maxVal) * 100 : 0;
+  return `<div class="bar-group">
+    <div class="bar-label"><span>${label} ${tipKey ? tip(tipKey) : ''}</span></div>
+    <div class="bar-pair">
+      <div class="bar-track"><div class="bar-fill p0" style="width:${pct0}%"></div><span class="bar-val">${fmtFn(v0)}</span></div>
+      <div class="bar-track"><div class="bar-fill p1" style="width:${pct1}%"></div><span class="bar-val">${fmtFn(v1)}</span></div>
+    </div>
+  </div>`;
+}
+
+function cmpRow(label, v0, v1, fmtFn, lowerBetter, tipKey) {
+  fmtFn = fmtFn || fmt;
+  let c0 = 'neutral', c1 = 'neutral';
+  if (v0 !== v1) {
+    const betterIs0 = lowerBetter ? v0 < v1 : v0 > v1;
+    c0 = betterIs0 ? 'better p0-better' : '';
+    c1 = betterIs0 ? '' : 'better p1-better';
+  }
+  return `<tr><td>${label} ${tipKey ? tip(tipKey) : ''}</td><td class="${c0}">${fmtFn(v0)}</td><td class="${c1}">${fmtFn(v1)}</td></tr>`;
+}
+
+function donut(value, max, color, size = 64, stroke = 7) {
+  const r = (size - stroke) / 2;
+  const circ = 2 * Math.PI * r;
+  const pctVal = max > 0 ? value / max : 0;
+  const offset = circ * (1 - pctVal);
+  return `<svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">
+    <circle cx="${size/2}" cy="${size/2}" r="${r}" fill="none" stroke="var(--surface2)" stroke-width="${stroke}"/>
+    <circle cx="${size/2}" cy="${size/2}" r="${r}" fill="none" stroke="${color}" stroke-width="${stroke}"
+      stroke-dasharray="${circ}" stroke-dashoffset="${offset}" stroke-linecap="round"
+      transform="rotate(-90 ${size/2} ${size/2})" style="transition:stroke-dashoffset 0.8s ease"/>
+    <text x="${size/2}" y="${size/2}" text-anchor="middle" dominant-baseline="central"
+      fill="var(--text)" font-size="${size < 70 ? 13 : 16}" font-weight="600" font-family="inherit">${pct(pctVal)}</text>
+  </svg>`;
+}
+
+function radarSVG(data, p0Vals, p1Vals) {
+  const cx = 150, cy = 150, R = 110, n = data.length;
+  const angleStep = (2 * Math.PI) / n;
+  const startAngle = -Math.PI / 2;
+
+  function polar(i, r) {
+    const a = startAngle + i * angleStep;
+    return [cx + r * Math.cos(a), cy + r * Math.sin(a)];
+  }
+
+  let gridLines = '';
+  for (const frac of [0.25, 0.5, 0.75, 1]) {
+    const pts = Array.from({length: n}, (_, i) => polar(i, R * frac).join(',')).join(' ');
+    gridLines += `<polygon points="${pts}" fill="none" stroke="var(--border)" stroke-width="0.5"/>`;
+  }
+  let axes = '';
+  for (let i = 0; i < n; i++) {
+    const [x, y] = polar(i, R);
+    axes += `<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="var(--border)" stroke-width="0.5"/>`;
+  }
+  let labels = '';
+  for (let i = 0; i < n; i++) {
+    const [x, y] = polar(i, R + 20);
+    const anchor = x < cx - 5 ? 'end' : x > cx + 5 ? 'start' : 'middle';
+    labels += `<text x="${x}" y="${y}" text-anchor="${anchor}" dominant-baseline="central" fill="var(--text-muted)" font-size="10" font-family="'Segoe UI', system-ui, sans-serif">${data[i].label}</text>`;
+  }
+  function dataPath(vals, color, dimColor) {
+    const pts = vals.map((v, i) => polar(i, R * Math.min(v, 1)).join(',')).join(' ');
+    return `<polygon points="${pts}" fill="${dimColor}" stroke="${color}" stroke-width="2"/>`;
+  }
+  return `<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+    ${gridLines}${axes}
+    ${dataPath(p1Vals, 'var(--p1)', 'var(--p1-dim)')}
+    ${dataPath(p0Vals, 'var(--p0)', 'var(--p0-dim)')}
+    ${labels}
+  </svg>`;
+}
+
+function render(d) {
+  const p0 = d.players[0], p1 = d.players[1];
+  const winnerIdx = d.winnerIndex;
+  const p0Name = d.models[0], p1Name = d.models[1];
+  const winnerName = winnerIdx === 0 ? p0Name : winnerIdx === 1 ? p1Name : 'Draw';
+
+  // Radar data (normalized 0-1, higher = better)
+  const radarAxes = [
+    { label: 'Purchase Rate', k: 'purchaseRate' },
+    { label: 'Pts/Purchase', k: 'pointsPerPurchase', max: 5 },
+    { label: 'Compliance', fn: p => 1 - p.fallbackRate },
+    { label: 'Efficiency', fn: p => Math.min(p.scoringPace / 1, 1) },
+    { label: 'Bonus Div.', fn: p => p.bonusDiversity / 5 },
+    { label: 'Reserve Eff.', k: 'reserveEfficiency' },
+    { label: 'Noble Align.', k: 'nobleAlignedPurchaseRate' },
+    { label: 'Gold Eff.', fn: p => p.goldEfficiency.spendRate },
+  ];
+  const r0 = radarAxes.map(a => a.fn ? a.fn(p0) : Math.min(p0[a.k] / (a.max || 1), 1));
+  const r1 = radarAxes.map(a => a.fn ? a.fn(p1) : Math.min(p1[a.k] / (a.max || 1), 1));
+
+  const maxLatency = Math.max(p0.latency.max, p1.latency.max);
+
+  $('#loader').style.display = 'none';
+  const el = $('#dashboard');
+  el.style.display = 'block';
+
+  el.innerHTML = `
+    <!-- Banner -->
+    <div class="game-banner">
+      <div class="matchup">
+        <span class="model-name p0">${p0Name}</span>
+        <span class="vs">vs</span>
+        <span class="model-name p1">${p1Name}</span>
+      </div>
+      <div class="result">
+        <span class="winner">${winnerName} wins</span>
+        ${d.isTiebreakWin ? '<br><span class="tiebreak">Tiebreak (fewer cards)</span>' : ''}
+      </div>
+      <div class="meta">
+        ${d.finalScores[0]}\u2013${d.finalScores[1]} &middot; ${d.totalTurns} turns &middot; ${dur(d.gameDurationMs)}
+      </div>
+    </div>
+
+    <!-- Tier Badges -->
+    <div class="tier-badges">
+      <div class="tier-badge">
+        <div class="label" style="color:var(--p0-bright)">${p0Name}</div>
+        <div class="badge tier-${p0.tier}">${p0.tier}</div>
+        <div class="score">${(p0.compositeScore * 100).toFixed(1)}% ${tip('compositeScore')}</div>
+      </div>
+      <div class="tier-badge">
+        <div class="label" style="color:var(--p1-bright)">${p1Name}</div>
+        <div class="badge tier-${p1.tier}">${p1.tier}</div>
+        <div class="score">${(p1.compositeScore * 100).toFixed(1)}% ${tip('compositeScore')}</div>
+      </div>
+    </div>
+
+    <div class="legend">
+      <span><span class="dot p0"></span>${p0Name} (Blue)</span>
+      <span><span class="dot p1"></span>${p1Name} (Red)</span>
+    </div>
+
+    <!-- Radar -->
+    <div class="grid full">
+      <div class="card">
+        <h3>Overall Comparison</h3>
+        <div class="radar-wrap">${radarSVG(radarAxes, r0, r1)}</div>
+      </div>
+    </div>
+
+    <!-- Head-to-Head Callouts -->
+    <div class="grid full">
+      <div class="card">
+        <h3>Head-to-Head</h3>
+        <div class="callout-row">
+          <div class="callout">
+            <div class="val">${d.headToHead.pointDifferential >= 0 ? '+' : ''}${d.headToHead.pointDifferential}</div>
+            <div class="desc">Point Diff ${tip('pointDiff')}</div>
+          </div>
+          <div class="callout">
+            <div class="val">${d.headToHead.leadChanges}</div>
+            <div class="desc">Lead Changes ${tip('leadChanges')}</div>
+          </div>
+          <div class="callout">
+            <div class="val">${d.headToHead.longestLead.turns}</div>
+            <div class="desc">Longest Lead (${d.headToHead.longestLead.playerIndex === 0 ? '<span style="color:var(--p0-bright)">Blue</span>' : '<span style="color:var(--p1-bright)">Red</span>'}) ${tip('longestLead')}</div>
+          </div>
+          <div class="callout">
+            <div class="val" style="color:${d.headToHead.comebackOccurred ? 'var(--gold)' : 'var(--text-muted)'}">${d.headToHead.comebackOccurred ? 'Yes' : 'No'}</div>
+            <div class="desc">Comeback${d.headToHead.comebackOccurred ? ` (${d.headToHead.maxDeficitOvercome} pts)` : ''} ${tip('comeback')}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Action Distribution + Tier Distribution -->
+    <div class="grid">
+      <div class="card">
+        <h3>Action Distribution</h3>
+        ${bar('Purchases', p0.actionCounts.purchases, p1.actionCounts.purchases, Math.max(p0.actionCounts.purchases, p1.actionCounts.purchases, 1), null, 'purchases')}
+        ${bar('Take Gems', p0.actionCounts.takeGems, p1.actionCounts.takeGems, Math.max(p0.actionCounts.takeGems, p1.actionCounts.takeGems, 1), null, 'takeGems')}
+        ${bar('Take 2 Gems', p0.actionCounts.take2Gems, p1.actionCounts.take2Gems, Math.max(p0.actionCounts.take2Gems, p1.actionCounts.take2Gems, 1), null, 'take2Gems')}
+        ${bar('Reserves', p0.actionCounts.reserves, p1.actionCounts.reserves, Math.max(p0.actionCounts.reserves, p1.actionCounts.reserves, 1), null, 'reserves')}
+      </div>
+
+      <div class="card">
+        <h3>Tier Distribution (Purchases)</h3>
+        ${bar('Tier 1', p0.tierDistribution.tier1, p1.tierDistribution.tier1, Math.max(p0.tierDistribution.tier1, p1.tierDistribution.tier1, 1), null, 'tier1')}
+        ${bar('Tier 2', p0.tierDistribution.tier2, p1.tierDistribution.tier2, Math.max(p0.tierDistribution.tier2, p1.tierDistribution.tier2, 1), null, 'tier2')}
+        ${bar('Tier 3', p0.tierDistribution.tier3, p1.tierDistribution.tier3, Math.max(p0.tierDistribution.tier3, p1.tierDistribution.tier3, 1), null, 'tier3')}
+      </div>
+    </div>
+
+    <!-- Key Metrics Donuts -->
+    <div class="grid full">
+      <div class="card">
+        <h3>Key Rates</h3>
+        <div class="donut-row">
+          <div class="donut-item">
+            ${donut(p0.purchaseRate, 1, 'var(--p0)')}
+            <div class="donut-label">Purchase Rate ${tip('purchaseRateDonut')}<br><span style="color:var(--p0-bright)">Blue</span></div>
+          </div>
+          <div class="donut-item">
+            ${donut(p1.purchaseRate, 1, 'var(--p1)')}
+            <div class="donut-label">Purchase Rate ${tip('purchaseRateDonut')}<br><span style="color:var(--p1-bright)">Red</span></div>
+          </div>
+          <div class="donut-item">
+            ${donut(1 - p0.fallbackRate, 1, 'var(--p0)')}
+            <div class="donut-label">Compliance ${tip('complianceDonut')}<br><span style="color:var(--p0-bright)">Blue</span></div>
+          </div>
+          <div class="donut-item">
+            ${donut(1 - p1.fallbackRate, 1, 'var(--p1)')}
+            <div class="donut-label">Compliance ${tip('complianceDonut')}<br><span style="color:var(--p1-bright)">Red</span></div>
+          </div>
+          <div class="donut-item">
+            ${donut(p0.reserveEfficiency, 1, 'var(--p0)')}
+            <div class="donut-label">Reserve Eff. ${tip('reserveEffDonut')}<br><span style="color:var(--p0-bright)">Blue</span></div>
+          </div>
+          <div class="donut-item">
+            ${donut(p1.reserveEfficiency, 1, 'var(--p1)')}
+            <div class="donut-label">Reserve Eff. ${tip('reserveEffDonut')}<br><span style="color:var(--p1-bright)">Red</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Detailed Comparison Tables -->
+    <div class="grid">
+      <div class="card">
+        <h3>Efficiency</h3>
+        <table class="cmp">
+          <tr><th>Metric</th><th style="color:var(--p0)">Blue</th><th style="color:var(--p1)">Red</th></tr>
+          ${cmpRow('Scoring Pace', p0.scoringPace, p1.scoringPace, v => fmt(v, 3), false, 'scoringPace')}
+          ${cmpRow('First Purchase Turn', p0.firstPurchaseTurn, p1.firstPurchaseTurn, fmt, true, 'firstPurchaseTurn')}
+          ${cmpRow('Purchase Cadence', p0.purchaseCadence, p1.purchaseCadence, v => fmt(v, 1), true, 'purchaseCadence')}
+          ${cmpRow('Longest Drought', p0.longestPurchaseDrought, p1.longestPurchaseDrought, fmt, true, 'longestDrought')}
+          ${cmpRow('5-pt Milestone', p0.pointMilestones.five, p1.pointMilestones.five, v => v != null ? 'Turn ' + v : '\u2013', true, 'milestone5')}
+          ${cmpRow('10-pt Milestone', p0.pointMilestones.ten, p1.pointMilestones.ten, v => v != null ? 'Turn ' + v : '\u2013', true, 'milestone10')}
+          ${cmpRow('15-pt Milestone', p0.pointMilestones.fifteen, p1.pointMilestones.fifteen, v => v != null ? 'Turn ' + v : '\u2013', true, 'milestone15')}
+        </table>
+      </div>
+
+      <div class="card">
+        <h3>Action Quality</h3>
+        <table class="cmp">
+          <tr><th>Metric</th><th style="color:var(--p0)">Blue</th><th style="color:var(--p1)">Red</th></tr>
+          ${cmpRow('Purchase Rate', p0.purchaseRate, p1.purchaseRate, pct, false, 'purchaseRate')}
+          ${cmpRow('Pts/Purchase', p0.pointsPerPurchase, p1.pointsPerPurchase, v => fmt(v, 2), false, 'ptsPerPurchase')}
+          ${cmpRow('0-pt Purchase Rate', p0.zeroPtPurchaseRate, p1.zeroPtPurchaseRate, pct, true, 'zeroPtRate')}
+          ${cmpRow('Gem Hoarding', p0.gemHoardingRate, p1.gemHoardingRate, pct, true, 'gemHoarding')}
+          ${cmpRow('Reserve Efficiency', p0.reserveEfficiency, p1.reserveEfficiency, pct, false, 'reserveEff')}
+          ${cmpRow('Wasted Reserves', p0.wastedReserves, p1.wastedReserves, fmt, true, 'wastedReserves')}
+          ${cmpRow('Gold Spend Rate', p0.goldEfficiency.spendRate, p1.goldEfficiency.spendRate, pct, false, 'goldSpendRate')}
+        </table>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Strategy</h3>
+        <table class="cmp">
+          <tr><th>Metric</th><th style="color:var(--p0)">Blue</th><th style="color:var(--p1)">Red</th></tr>
+          ${cmpRow('Bonus Diversity', p0.bonusDiversity, p1.bonusDiversity, v => v + '/5', false, 'bonusDiversity')}
+          ${cmpRow('Bonus Spread', p0.bonusSpread, p1.bonusSpread, v => fmt(v, 2), false, 'bonusSpread')}
+          ${cmpRow('Nobles Earned', p0.nobleCount, p1.nobleCount, fmt, false, 'nobleCount')}
+          ${cmpRow('Noble-Aligned %', p0.nobleAlignedPurchaseRate, p1.nobleAlignedPurchaseRate, pct, false, 'nobleAligned')}
+          ${cmpRow('Blocking Reserve %', p0.blockingReserveRate, p1.blockingReserveRate, pct, false, 'blockingReserve')}
+          ${cmpRow('Urgency Shift', p0.urgencyShift, p1.urgencyShift, v => (v >= 0 ? '+' : '') + fmt(v, 2), false, 'urgencyShift')}
+        </table>
+      </div>
+
+      <div class="card">
+        <h3>Format Compliance</h3>
+        <table class="cmp">
+          <tr><th>Metric</th><th style="color:var(--p0)">Blue</th><th style="color:var(--p1)">Red</th></tr>
+          ${cmpRow('Fallback Rate', p0.fallbackRate, p1.fallbackRate, pct, true, 'fallbackRate')}
+          ${cmpRow('Malformed JSON', p0.malformedJsonRate, p1.malformedJsonRate, pct, true, 'malformedJson')}
+          ${cmpRow('Illegal Moves', p0.illegalMoveRate, p1.illegalMoveRate, pct, true, 'illegalMove')}
+          ${cmpRow('Fallbacks (Early)', p0.fallbacksByPhase.early, p1.fallbacksByPhase.early, fmt, true, 'fbEarly')}
+          ${cmpRow('Fallbacks (Mid)', p0.fallbacksByPhase.mid, p1.fallbacksByPhase.mid, fmt, true, 'fbMid')}
+          ${cmpRow('Fallbacks (Late)', p0.fallbacksByPhase.late, p1.fallbacksByPhase.late, fmt, true, 'fbLate')}
+        </table>
+      </div>
+    </div>
+
+    <!-- Latency -->
+    <div class="grid full">
+      <div class="card">
+        <h3>Latency</h3>
+        ${bar('Mean', p0.latency.mean, p1.latency.mean, maxLatency, ms, 'latMean')}
+        ${bar('Median', p0.latency.median, p1.latency.median, maxLatency, ms, 'latMedian')}
+        ${bar('P95', p0.latency.p95, p1.latency.p95, maxLatency, ms, 'latP95')}
+        ${bar('Min', p0.latency.min, p1.latency.min, maxLatency, ms, 'latMin')}
+        ${bar('Max', p0.latency.max, p1.latency.max, maxLatency, ms, 'latMax')}
+        ${bar('Total', p0.latency.total, p1.latency.total, Math.max(p0.latency.total, p1.latency.total), v => dur(v), 'latTotal')}
+      </div>
+    </div>
+  `;
+
+  // Position tooltips: flip below if they'd overflow the viewport top
+  el.querySelectorAll('.info-tip').forEach(tip => {
+    tip.addEventListener('mouseenter', () => {
+      const tt = tip.querySelector('.tip-text');
+      if (!tt) return;
+      tt.classList.remove('tip-below');
+      const rect = tip.getBoundingClientRect();
+      // If tooltip above would go off-screen (need ~80px clearance for tooltip height)
+      if (rect.top < 90) {
+        tt.classList.add('tip-below');
+      }
+    });
+  });
+}
+</script>
+</body>
+</html>

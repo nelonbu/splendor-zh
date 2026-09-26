@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 358 295" width="358" height="295">
+  <g transform="translate(-541 -191)">
+    <path xmlns:xlink="http://www.w3.org/1999/xlink" d="M830.2,214c-1.9-2.4-4.8-3.8-7.9-3.8H618.2c-3.1,0-6,1.4-7.9,3.8l-66.5,84.3c-3.1,4-2.8,9.6,0.7,13.2   L713.2,483c1.9,1.9,4.4,3,7.1,3c2.7,0,5.2-1.1,7.1-3L896,311.5c3.5-3.6,3.8-9.3,0.7-13.2L830.2,214z" style="fill:#290050;"/>
+    <path xmlns:xlink="http://www.w3.org/1999/xlink" d="M830.2,195.7c-1.9-2.4-4.8-3.8-7.9-3.8H618.2c-3.1,0-6,1.4-7.9,3.8L543.8,280c-3.1,4-2.8,9.6,0.7,13.2   l168.6,171.4c1.9,1.9,4.4,3,7.1,3c2.7,0,5.2-1.1,7.1-3L896,293.2c3.5-3.6,3.8-9.3,0.7-13.2L830.2,195.7z" style="fill:#FFFFFF;"/>
+    <g xmlns:xlink="http://www.w3.org/1999/xlink">
+		<polygon points="618.2,201.9 551.7,286.2 618.2,286.2 671.6,244   " style="fill:#D1EEFC;"/>
+		<polygon points="671.6,244 720.3,201.9 618.2,201.9   " style="fill:#E4F5FC;"/>
+		<polygon points="618.2,286.2 720.3,286.2 671.6,244   " style="fill:#DFF3FB;"/>
+		<polygon points="551.7,286.2 720.3,457.6 618.2,286.2   " style="fill:#ACE1FA;"/>
+		<polygon points="822.4,201.9 888.9,286.2 822.4,286.2 769,244   " style="fill:#D1EEFC;"/>
+		<polygon points="769,244 720.3,201.9 822.4,201.9   " style="fill:#E4F5FC;"/>
+		<polygon points="720.3,201.9 671.6,244 720.3,286.2 769,244   " style="fill:#EBF7FE;"/>
+		<polygon points="822.4,286.2 720.3,286.2 769,244   " style="fill:#DFF3FB;"/>
+		<polygon points="888.9,286.2 720.3,457.6 822.4,286.2   " style="fill:#ACE1FA;"/>
+		<polygon points="720.3,286.2 618.2,286.2 720.3,457.6 822.4,286.2   " style="fill:#D7F0FC;"/>
+	</g>
+  </g>
+</svg>
