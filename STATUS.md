@@ -1,5 +1,11 @@
 # 项目状态
 
+## GitHub 远程仓库关联（2026-09-26）
+
+用户已在 GitHub Desktop 添加本地目录，并确认线上公开仓库地址为 `https://github.com/nelonbu/splendor-zh`。本地 Git 已将 `origin` 的读取和推送地址设为 `https://github.com/nelonbu/splendor-zh.git`；分支仍为 `main`。实际检查：`git remote -v` 返回这两个地址，设置前本地工作区干净。用户计划自行在 GitHub Desktop 推送；本次未执行 `git push`。尚未验证远端内容、首次推送结果或 GitHub Actions。
+
+---
+
 ## 本地项目目录更名（2026-09-26）
 
 按用户要求，将本地项目文件夹从 `C:\Users\User\Desktop\test\my_splender\splendor-main` 更名为 `C:\Users\User\Desktop\test\my_splender\splendor-zh`；Git 分支继续为 `main`，原有提交历史保留。同步更新 `AGENTS.md` 与 `docs/PLAN.md` 中表示当前项目位置的路径；旧阶段记录与素材清单中的 `splendor-main` 仍为历史来源说明，未修改其哈希或业务数据。原有 5173 本地开发服务在移动前退出，尚未从新路径重新启动。
