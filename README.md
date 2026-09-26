@@ -41,6 +41,12 @@ npm run build
 
 构建结果位于 `dist/`。素材预览可通过 `npm run assets:preview` 启动。
 
+## GitHub Pages 网页版
+
+本仓库的 `.github/workflows/pages.yml` 会在推送到 `main` 后运行素材检查、测试和网页构建，再发布双人同机版本。首次使用时，在 GitHub 仓库 **Settings → Pages → Build and deployment → Source** 选择 **GitHub Actions**。通过 GitHub Desktop 将本地改动推送后，在 **Actions** 中查看 `Deploy GitHub Pages` 的结果；成功后访问 `https://nelonbu.github.io/splendor-zh/`。
+
+Pages 构建使用 `/splendor-zh/` 路径；普通 `npm run build` 和 Windows 双击启动入口仍使用本地根路径。网页允许两人在同一设备上轮流玩，不提供跨设备同步。
+
 ## 项目说明
 
 游戏规则数据与状态管理沿用主项目。图片只用于展示；卡牌费用、分数和贵族要求仍来自游戏数据。

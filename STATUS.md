@@ -1,5 +1,15 @@
 # 项目状态
 
+## GitHub Pages 发布准备（2026-09-26）
+
+按当前 `nelonbu/splendor-zh` 仓库路径添加 GitHub Pages 工作流：推送 `main` 后执行 `npm ci`、素材检查、测试和前端构建，再上传 `dist`。Pages 构建使用 `/splendor-zh/`，普通本地构建仍使用 `/`；展示组件依照构建路径加载卡牌、贵族与宝石图标。BGM 继续通过 Vite 导入。没有修改规则数据或联机逻辑，也未推送远程。
+
+实际检查：`npm run assets:check` 通过（51 个素材文件、90 张发展卡、10 位贵族、6 种宝石、3 种牌背）；`npm test` 16 个文件、232 项通过；普通 `npm run build` 和设置 `GITHUB_PAGES=true` 的 Pages 构建均通过。以 Pages 路径启动 `vite preview` 后，首页、JS、CSS、MP3、发展卡 PNG、宝石 SVG、自备贵族 PNG 的 HTTP HEAD 请求均返回 200，资源类型正确。在真实浏览器通过 `/splendor-zh/` 进入双人对局，83 张当前图片无加载失败；音乐点击后 `paused=false`、`readyState=4`。临时预览服务已停止。
+
+尚未验证：GitHub Actions 在远程运行、Pages 实际上线后的访问、其他浏览器及手机布局。需要用户通过 GitHub Desktop 推送本地改动，并在仓库 Settings → Pages 选择 GitHub Actions；本次未代用户推送或更改远程仓库设置。
+
+---
+
 ## 本地对局背景音乐（2026-09-26）
 
 将项目现有的 `assets/bgm.MP3` 通过 Vite 资源 URL 接入双人同机对局，游戏页右上角新增“音乐：关/开”按钮。默认关闭，由玩家点击后以 35% 音量循环播放；再次点击暂停，退出对局或对局结束时卸载音频并停止，加载/播放失败时按钮显示“音乐不可用”。文案集中在 `src/i18n/zhCN.ts`，没有修改规则、状态协议或正式初始资源。
