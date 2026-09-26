@@ -10,6 +10,7 @@ import DiscardModal from './components/DiscardModal';
 import NobleModal from './components/NobleModal';
 import GameOver from './components/GameOver';
 import AnimationProvider from './components/AnimationProvider';
+import MusicToggle from './components/MusicToggle';
 import { copy } from './i18n/zhCN';
 
 function AppContent() {
@@ -41,6 +42,7 @@ function AppContent() {
       <div className="game-header">
         <h1>{copy.title}</h1>
         <div className="game-header-actions">
+          <MusicToggle />
           <button className="btn-quit" onClick={resetGame}>{copy.quitGame}</button>
         </div>
       </div>

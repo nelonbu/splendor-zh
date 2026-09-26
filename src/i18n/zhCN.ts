@@ -13,6 +13,9 @@ export const gemShortNames: Record<GemColor, string> = {
 export const copy = {
   title: '璀璨宝石',
   quitGame: '退出对局',
+  musicOn: '音乐：开',
+  musicOff: '音乐：关',
+  musicUnavailable: '音乐不可用',
   localPlayers: '双人同机',
   howToPlay: '玩法说明',
   playerOneName: '玩家一名称',

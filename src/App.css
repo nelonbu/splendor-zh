@@ -95,6 +95,33 @@ button:not(:disabled):hover {
   align-items: center;
 }
 
+.btn-music {
+  background: #1a2633;
+  border: 1px solid #526273;
+  color: #c7d3de;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+
+.btn-music[aria-pressed='true'] {
+  border-color: #f5c518;
+  color: #f5c518;
+}
+
+@media (max-width: 540px) {
+  .game-header {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .game-header-actions {
+    position: static;
+    align-self: flex-end;
+  }
+}
+
 .btn-quit {
   background: transparent;
   border: 1px solid #4a3040;

@@ -1,5 +1,13 @@
 # 项目状态
 
+## 本地对局背景音乐（2026-09-26）
+
+将项目现有的 `assets/bgm.MP3` 通过 Vite 资源 URL 接入双人同机对局，游戏页右上角新增“音乐：关/开”按钮。默认关闭，由玩家点击后以 35% 音量循环播放；再次点击暂停，退出对局或对局结束时卸载音频并停止，加载/播放失败时按钮显示“音乐不可用”。文案集中在 `src/i18n/zhCN.ts`，没有修改规则、状态协议或正式初始资源。
+
+实际检查：`npm run assets:check` 通过；`npm test` 15 个文件、231 项通过；`npm run build` 通过，构建产物包含约 5.1 MB 的 MP3。真实浏览器中进入对局后，按钮从“音乐：关”切到“音乐：开”，音频 `readyState=4`、`paused=false`、`loop=true`；再次点击后 `paused=true`，退出对局后音频节点消失。已目视检查右上角按钮在当前桌面视口显示。尚未主观试听声音、验证其他浏览器和小屏实际排版，也未推送远程。
+
+---
+
 ## GitHub 首次发布确认（2026-09-26）
 
 用户反馈已通过 GitHub Desktop 提交并能在线查看 `https://github.com/nelonbu/splendor-zh`。本地检查时，`main` 与 `origin/main` 均指向 `ec789b7`（`Update README title for Chinese local version`），工作区干净；该提交仅调整 README 标题。远程地址仍为 `https://github.com/nelonbu/splendor-zh.git`。本次未执行远程推送；当前工具无法直接读取 GitHub 页面，线上页面内容与 Actions 检查结果仅有用户反馈，尚未由本环境独立验证。本次为状态记录，未运行测试或构建。
