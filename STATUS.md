@@ -1,5 +1,11 @@
 # 项目状态
 
+## GitHub 首次发布确认（2026-09-26）
+
+用户反馈已通过 GitHub Desktop 提交并能在线查看 `https://github.com/nelonbu/splendor-zh`。本地检查时，`main` 与 `origin/main` 均指向 `ec789b7`（`Update README title for Chinese local version`），工作区干净；该提交仅调整 README 标题。远程地址仍为 `https://github.com/nelonbu/splendor-zh.git`。本次未执行远程推送；当前工具无法直接读取 GitHub 页面，线上页面内容与 Actions 检查结果仅有用户反馈，尚未由本环境独立验证。本次为状态记录，未运行测试或构建。
+
+---
+
 ## GitHub 远程仓库关联（2026-09-26）
 
 用户已在 GitHub Desktop 添加本地目录，并确认线上公开仓库地址为 `https://github.com/nelonbu/splendor-zh`。本地 Git 已将 `origin` 的读取和推送地址设为 `https://github.com/nelonbu/splendor-zh.git`；分支仍为 `main`。实际检查：`git remote -v` 返回这两个地址，设置前本地工作区干净。用户计划自行在 GitHub Desktop 推送；本次未执行 `git push`。尚未验证远端内容、首次推送结果或 GitHub Actions。
