@@ -2,9 +2,9 @@
 
 ## GitHub 发布准备（2026-09-26）
 
-用户确认原项目代码与素材均已获发布授权，并指定公开仓库名 `splendor-zh`。已在 `splendor-main` 初始化 `main` 分支 Git 仓库；为发布补充 `.gitignore` 的环境文件、日志及系统文件忽略项，并在 `ASSETS.md` 顶部记录最新授权确认。初步文件名及常见密钥格式扫描未发现需排除的凭据；暂存清单为 178 个文件，未包含 `node_modules/`、`dist/`、`dist-server/`、环境文件或可执行归档。
+用户确认原项目代码与素材均已获发布授权，并指定公开仓库名 `splendor-zh`。已在 `splendor-main` 初始化 `main` 分支 Git 仓库，并生成首个本地提交 `6050954`；为发布补充 `.gitignore` 的环境文件、日志及系统文件忽略项，并在 `ASSETS.md` 顶部记录最新授权确认。初步文件名及常见密钥格式扫描未发现需排除的凭据；首个提交包含 178 个文件，未包含 `node_modules/`、`dist/`、`dist-server/`、环境文件或可执行归档。
 
-实际检查：`npm ci --no-audit --no-fund` 因另一正在运行的 Vite 进程占用 rolldown 原生文件而中断；随后 `npm install --no-audit --no-fund` 恢复依赖，`npm ls --depth=0` 通过。`npm run assets:check` 校验 51 个素材文件及全部映射通过；`npm test` 15 个文件、231 项通过；`npm run build` 通过。`npm run build:server` 在沙箱内遇到目录读取限制，获准在沙箱外重跑后通过。`git diff --cached --check` 报告旧 SVG 的两处尾随空格和旧 AI 组件的一处文件末尾空行；未改动素材字节或无关源码。尚未完成 GitHub 页面/CI 验证，也未验证在 Node 20 上干净安装；远程仓库创建与推送待完成。
+实际检查：`npm ci --no-audit --no-fund` 因另一正在运行的 Vite 进程占用 rolldown 原生文件而中断；随后 `npm install --no-audit --no-fund` 恢复依赖，`npm ls --depth=0` 通过。`npm run assets:check` 校验 51 个素材文件及全部映射通过；`npm test` 15 个文件、231 项通过；`npm run build` 通过。`npm run build:server` 在沙箱内遇到目录读取限制，获准在沙箱外重跑后通过。`git diff --cached --check` 报告旧 SVG 的两处尾随空格和旧 AI 组件的一处文件末尾空行；未改动素材字节或无关源码。GitHub 新建页面未能通过浏览器工具打开，读取 Git Credential Manager 登录账号的提权请求未获许可；已请用户建立空的公开仓库并提供 HTTPS 地址。尚未完成 GitHub 页面/CI 验证，也未验证在 Node 20 上干净安装；远程仓库创建与推送待完成。
 
 ---
 
