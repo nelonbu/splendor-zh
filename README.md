@@ -53,4 +53,6 @@ Pages 构建使用 `/splendor-zh/` 路径；普通 `npm run build` 和 Windows �
 
 游戏规则数据与状态管理沿用主项目。图片只用于展示；卡牌费用、分数和贵族要求仍来自游戏数据。
 
-项目基于 [TanmayKhot/splendor](https://github.com/TanmayKhot/splendor) 改造。部分图片素材参考并来自 PyGem，素材来源与映射记录见 [ASSETS.md](ASSETS.md)。开发进度及已执行的检查见 [STATUS.md](STATUS.md)。
+项目基于 [TanmayKhot/splendor](https://github.com/TanmayKhot/splendor) 改造。部分图片素材参考并来自 [Jorge Rodriguez 的 PyGem 项目](https://github.com/jorge-lgclabs/PyGem) ，素材来源与映射记录见 [ASSETS.md](ASSETS.md)。开发进度及已执行的检查见 [STATUS.md](STATUS.md)。
+
+
