@@ -2420,3 +2420,121 @@ button:not(:disabled):hover {
   transform: none;
   box-shadow: none;
 }
+
+/* The same game board becomes a single, scrollable column on phones. */
+@media (max-width: 800px) {
+  .app {
+    padding: 10px;
+  }
+
+  .board {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .board-main,
+  .board-side {
+    min-width: 0;
+  }
+
+  .noble-row {
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
+
+  .noble-row > * {
+    flex-shrink: 0;
+  }
+
+  .card-tier {
+    overflow-x: auto;
+    padding-bottom: 6px;
+    scrollbar-width: thin;
+    scrollbar-color: #3a4f70 transparent;
+  }
+
+  .deck-button {
+    flex: 0 0 68px;
+  }
+
+  .card-slot {
+    flex: 0 0 150px;
+  }
+
+  .card-slot-empty {
+    min-width: 0;
+  }
+
+  .gem-pool-controls {
+    flex-direction: column;
+    align-items: stretch;
+    overflow-x: visible;
+  }
+
+  .gem-tokens {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .gem-token {
+    width: 50px;
+    height: 50px;
+  }
+
+  .gem-selection-actions {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .player-panel-wrapper {
+    flex-direction: column;
+  }
+
+  .player-panel-wrapper > .player-panel,
+  .player-last-move-column {
+    width: 100%;
+  }
+
+  .reserved-card {
+    flex-wrap: wrap;
+  }
+
+  .reserved-card .card-actions {
+    flex: 1 1 100%;
+  }
+
+  .card-actions button,
+  .gem-selection-actions button,
+  .btn-undo-turn,
+  .game-header-actions button {
+    min-height: 44px;
+  }
+
+  .rules-modal {
+    padding: 56px 16px 20px;
+  }
+
+  .rules-close {
+    top: 8px;
+    right: 8px;
+    width: 44px;
+    height: 44px;
+  }
+
+  .modal-overlay {
+    padding: 12px;
+  }
+
+  .modal {
+    width: min(100%, 500px);
+    min-width: 0;
+    max-height: calc(100dvh - 24px);
+    overflow-y: auto;
+    padding: 20px;
+  }
+
+  .noble-choices {
+    flex-wrap: wrap;
+  }
+}
